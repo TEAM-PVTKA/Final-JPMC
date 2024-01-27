@@ -12,11 +12,27 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CommonModule } from '@angular/common';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { HeaderComponent } from './header/header.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { CardsComponent } from './cards/cards.component';
+import { LimitsComponent } from './limits/limits.component';
+import { LoginComponent } from './login/login.component';
+import { CouponsComponent } from './coupons/coupons.component';
+import { DataComponent } from './data/data.component';
+import { SavingrecommendationsComponent } from './savingrecommendations/savingrecommendations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    AlertsComponent,
+    CardsComponent,
+    LimitsComponent,
+    LoginComponent,
+    CouponsComponent,
+    DataComponent,
+    SavingrecommendationsComponent
   ],
   imports: [
     BrowserModule,
