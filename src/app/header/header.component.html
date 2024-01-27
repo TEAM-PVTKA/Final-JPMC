@@ -1,2 +1,99 @@
-<p>header works!</p>
-<router-outlet></router-outlet>
+<script nonce="71a32b16-a3f8-4b32-8d12-32d2073e88a0">
+    try {
+        (function (w, d) {
+            !function (b$, ca, cb, cc) { b$[cb] = b$[cb] || {}; b$[cb].executed = []; b$.zaraz = { deferred: [], listeners: [] }; b$.zaraz.q = []; b$.zaraz._f = function (cd) { return async function () { var ce = Array.prototype.slice.call(arguments); b$.zaraz.q.push({ m: cd, a: ce }) } }; for (const cf of ["track", "set", "debug"]) b$.zaraz[cf] = b$.zaraz._f(cf); b$.zaraz.init = () => { var cg = ca.getElementsByTagName(cc)[0], ch = ca.createElement(cc), ci = ca.getElementsByTagName("title")[0]; ci && (b$[cb].t = ca.getElementsByTagName("title")[0].text); b$[cb].x = Math.random(); b$[cb].w = b$.screen.width; b$[cb].h = b$.screen.height; b$[cb].j = b$.innerHeight; b$[cb].e = b$.innerWidth; b$[cb].l = b$.location.href; b$[cb].r = ca.referrer; b$[cb].k = b$.screen.colorDepth; b$[cb].n = ca.characterSet; b$[cb].o = (new Date).getTimezoneOffset(); if (b$.dataLayer) for (const cm of Object.entries(Object.entries(dataLayer).reduce(((cn, co) => ({ ...cn[1], ...co[1] })), {}))) zaraz.set(cm[0], cm[1], { scope: "page" }); b$[cb].q = []; for (; b$.zaraz.q.length;) { const cp = b$.zaraz.q.shift(); b$[cb].q.push(cp) } ch.defer = !0; for (const cq of [localStorage, sessionStorage]) Object.keys(cq || {}).filter((cs => cs.startsWith("_zaraz_"))).forEach((cr => { try { b$[cb]["z_" + cr.slice(7)] = JSON.parse(cq.getItem(cr)) } catch { b$[cb]["z_" + cr.slice(7)] = cq.getItem(cr) } })); ch.referrerPolicy = "origin"; ch.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(b$[cb]))); cg.parentNode.insertBefore(ch, cg) };["complete", "interactive"].includes(ca.readyState) ? zaraz.init() : b$.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script");
+        })(window, document)
+    } catch (err) {
+        console.error('Failed to run Cloudflare Zaraz: ', err)
+        fetch('/cdn-cgi/zaraz/t', {
+            credentials: 'include',
+            keepalive: true,
+            method: 'GET',
+        })
+    }
+
+</script>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+    integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+    data-cf-beacon='{"rayId":"84bf41f65ebd85b3","version":"2024.1.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+    crossorigin="anonymous"></script>
+
+<header>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <h1><a href="index.html" class="logo"><img src="logo.png" alt="" height="50" width="50"></a></h1>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="#"><span class="fa-solid fa-table-cells-large"></span> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-chart-simple"></span>Expenses</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-stopwatch"></span>Set Limits</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-credit-card"></span> Cards</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-paper-plane"></span> Contact us</a>
+                </li>
+            </ul>
+            <div class="footer">
+                <p>
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | <i
+                        class="icon-heart" aria-hidden="true"></i> by DRF <a
+                        href="https://drreddysfoundation.org/skill-development-interventions-of-dr-reddys-foundation/"
+                        target="_blank">DRF</a>
+                </p>
+            </div>
+        </nav>
+
+        
+        <div id="content" class="p-4 p-md-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i
+                                        class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</header>
+
+<!-- </div> -->
+
+
