@@ -35,6 +35,10 @@ export class LimitsComponent {
     
   }
 
+  ngOnInit(){
+    
+  }
+
   handleSetLimit() {
     if (this.selectedCateg.trim() === '') {
       // Do not proceed if the entered category name is null or empty
@@ -57,7 +61,18 @@ export class LimitsComponent {
 
         // Clear the selected category
         this.selectedCateg = '';
-        console.log(this.a.totalAmount())
+        // console.log(this.a.totalAmount())
+
+
+
+
+
+
+
+
+
+
+
       }
     }
   }

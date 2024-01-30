@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { CouponsComponent } from './coupons/coupons.component';
 import { DataComponent } from './data/data.component';
 import { SavingrecommendationsComponent } from './savingrecommendations/savingrecommendations.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { SavingrecommendationsComponent } from './savingrecommendations/savingre
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    HttpClientModule,
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     CommonModule,
