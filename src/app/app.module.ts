@@ -19,10 +19,10 @@ import { LimitsComponent } from './limits/limits.component';
 import { LoginComponent } from './login/login.component';
 import { CouponsComponent } from './coupons/coupons.component';
 import { DataComponent } from './data/data.component';
-import { SavingrecommendationsComponent } from './savingrecommendations/savingrecommendations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LimitsService } from './service/limits.service';
 import { Series } from 'highcharts';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { Series } from 'highcharts';
     LoginComponent,
     CouponsComponent,
     DataComponent,
-    SavingrecommendationsComponent,
+    ExpensesComponent,
   ],
   imports: [
     BrowserModule,

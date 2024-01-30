@@ -8,8 +8,8 @@ import { CardsComponent } from './cards/cards.component';
 import { CouponsComponent } from './coupons/coupons.component';
 import { DataComponent } from './data/data.component';
 import { LimitsComponent } from './limits/limits.component';
-import { SavingrecommendationsComponent } from './savingrecommendations/savingrecommendations.component';
 import { AppComponent } from './app.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'data', component: DataComponent },
   { path: 'limits', component: LimitsComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'recommendations', component: SavingrecommendationsComponent },
+  { path: 'expenses', component: ExpensesComponent },
 ];
 
 @NgModule({

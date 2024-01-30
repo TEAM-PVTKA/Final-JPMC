@@ -69,13 +69,4 @@ export class LimitsService {
     return income;
   }
 
-  //written by T
-  getMonthlyIncome(month: string): number {
-    let inc = 0;
-    const monthlyData: MonthlyData = this.yearData?.months.filter(
-      (m: MonthlyData) => m.month == month
-    )[0]!;
-
-    return monthlyData.income;
-  }
 }

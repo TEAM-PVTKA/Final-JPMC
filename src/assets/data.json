@@ -32,7 +32,7 @@
                           "amount": 20000
                       }
                   ],
-                   "income": 117000
+                   "income":100000
               },
               {
                   "month": "February",
@@ -63,7 +63,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income": 117000
+                  "income":100000
               },
               {
                   "month": "March",
@@ -94,7 +94,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":100000
               },
               {
                   "month": "April",
@@ -125,7 +125,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income": 117000
+                  "income":100000
               },
               {
                   "month": "May",
@@ -156,7 +156,7 @@
                           "amount": 20000
                       }
                   ],
-                  "income": 120000
+                  "income": 100000
               },
               {
                   "month": "June",
@@ -187,7 +187,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":100000
               },
               {
                   "month": "July",
@@ -218,7 +218,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":100000
               },
               {
                   "month": "August",
@@ -226,11 +226,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 25000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 18000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -242,14 +242,14 @@
                       },
                       {
                           "category": "Transportation",
-                          "amount": 8000
+                          "amount": 18000
                       },
                       {
                           "category": "Shopping",
-                          "amount": 27000
+                          "amount": 7000
                       }
                   ],
-                  "income": 117000
+                  "income":100000
               },
               {
                   "month": "September",
@@ -257,11 +257,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 10000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 20000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -269,7 +269,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 25000
+                          "amount": 15000
                       },
                       {
                           "category": "Transportation",
@@ -280,7 +280,7 @@
                           "amount": 20000
                       }
                   ],
-                  "income": 120000
+                  "income": 100000
               },
               {
                   "month": "October",
@@ -288,15 +288,15 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
-                      },
-                      {
-                          "category": "Utilities",
                           "amount": 20000
                       },
                       {
+                          "category": "Utilities",
+                          "amount": 10000
+                      },
+                      {
                           "category": "Entertainment",
-                          "amount": 15000
+                          "amount": 10000
                       },
                       {
                           "category": "My Bills",
@@ -304,14 +304,14 @@
                       },
                       {
                           "category": "Transportation",
-                          "amount": 10000
+                          "amount": 8000
                       },
                       {
                           "category": "Shopping",
                           "amount": 20000
                       }
                   ],
-                  "income": 120000
+                  "income": 100000
               },
               {
                   "month": "November",
@@ -319,7 +319,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 12000
                       },
                       {
                           "category": "Utilities",
@@ -339,10 +339,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 22000
+                          "amount": 15000
                       }
                   ],
-                  "income": 115000
+                  "income":100000
               },
               {
                   "month": "December",
@@ -350,7 +350,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 15000
                       },
                       {
                           "category": "Utilities",
@@ -370,10 +370,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 27000
+                          "amount": 22000
                       }
                   ],
-                  "income": 117000
+                  "income":100000
               }
           ]
       },
@@ -384,30 +384,30 @@
                   "month": "January",
                   "expenses": [
                      
-                      {
-                          "category": "Groceries",
-                          "amount": 30000
-                      },
-                      {
-                          "category": "Utilities",
-                          "amount": 20000
-                      },
-                      {
-                          "category": "Entertainment",
-                          "amount": 17000
-                      },
-                      {
-                          "category": "My Bills",
-                          "amount": 28000
-                      },
-                      {
-                          "category": "Transportation",
-                          "amount": 10000
-                      },
-                      {
-                          "category": "Shopping",
-                          "amount": 20000
-                      }
+                    {
+                        "category": "Groceries",
+                        "amount": 15000
+                    },
+                    {
+                        "category": "Utilities",
+                        "amount": 18000
+                    },
+                    {
+                        "category": "Entertainment",
+                        "amount": 12000
+                    },
+                    {
+                        "category": "My Bills",
+                        "amount": 22000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 8000
+                    },
+                    {
+                        "category": "Shopping",
+                        "amount": 22000
+                    }
                   ],
                   "income": 125000
               },
@@ -415,94 +415,94 @@
                   "month": "February",
                   "expenses": [
                      
-                      {
-                          "category": "Groceries",
-                          "amount": 28000
-                      },
-                      {
-                          "category": "Utilities",
-                          "amount": 18000
-                      },
-                      {
-                          "category": "Entertainment",
-                          "amount": 12000
-                      },
-                      {
-                          "category": "My Bills",
-                          "amount": 22000
-                      },
-                      {
-                          "category": "Transportation",
-                          "amount": 8000
-                      },
-                      {
-                          "category": "Shopping",
-                          "amount": 27000
-                      }
+                    {
+                        "category": "Groceries",
+                        "amount": 20000
+                    },
+                    {
+                        "category": "Utilities",
+                        "amount": 10000
+                    },
+                    {
+                        "category": "Entertainment",
+                        "amount": 10000
+                    },
+                    {
+                        "category": "My Bills",
+                        "amount": 25000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 8000
+                    },
+                    {
+                        "category": "Shopping",
+                        "amount": 20000
+                    }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "March",
                   "expenses": [
                      
-                      {
-                          "category": "Groceries",
-                          "amount": 32000
-                      },
-                      {
-                          "category": "Utilities",
-                          "amount": 16000
-                      },
-                      {
-                          "category": "Entertainment",
-                          "amount": 10000
-                      },
-                      {
-                          "category": "My Bills",
-                          "amount": 23000
-                      },
-                      {
-                          "category": "Transportation",
-                          "amount": 12000
-                      },
-                      {
-                          "category": "Shopping",
-                          "amount": 22000
-                      }
+                    {
+                        "category": "Groceries",
+                        "amount": 32000
+                    },
+                    {
+                        "category": "Utilities",
+                        "amount": 16000
+                    },
+                    {
+                        "category": "Entertainment",
+                        "amount": 10000
+                    },
+                    {
+                        "category": "My Bills",
+                        "amount": 23000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 12000
+                    },
+                    {
+                        "category": "Shopping",
+                        "amount": 22000
+                    }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "April",
                   "expenses": [
                      
-                      {
-                          "category": "Groceries",
-                          "amount": 28000
-                      },
-                      {
-                          "category": "Utilities",
-                          "amount": 18000
-                      },
-                      {
-                          "category": "Entertainment",
-                          "amount": 12000
-                      },
-                      {
-                          "category": "My Bills",
-                          "amount": 22000
-                      },
-                      {
-                          "category": "Transportation",
-                          "amount": 8000
-                      },
-                      {
-                          "category": "Shopping",
-                          "amount": 27000
-                      }
+                    {
+                        "category": "Groceries",
+                        "amount": 12000
+                    },
+                    {
+                        "category": "Utilities",
+                        "amount": 16000
+                    },
+                    {
+                        "category": "Entertainment",
+                        "amount": 10000
+                    },
+                    {
+                        "category": "My Bills",
+                        "amount": 23000
+                    },
+                    {
+                        "category": "Transportation",
+                        "amount": 12000
+                    },
+                    {
+                        "category": "Shopping",
+                        "amount": 15000
+                    }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "May",
@@ -510,7 +510,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 10000
                       },
                       {
                           "category": "Utilities",
@@ -541,11 +541,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 23000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 16000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -553,7 +553,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 20000
                       },
                       {
                           "category": "Transportation",
@@ -564,7 +564,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "July",
@@ -572,7 +572,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 15000
                       },
                       {
                           "category": "Utilities",
@@ -595,7 +595,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "August",
@@ -603,7 +603,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 25000
                       },
                       {
                           "category": "Utilities",
@@ -615,7 +615,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 22000
+                          "amount": 12000
                       },
                       {
                           "category": "Transportation",
@@ -626,7 +626,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "September",
@@ -634,7 +634,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 12000
                       },
                       {
                           "category": "Utilities",
@@ -646,7 +646,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 13000
                       },
                       {
                           "category": "Transportation",
@@ -657,7 +657,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "October",
@@ -665,7 +665,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 13000
                       },
                       {
                           "category": "Utilities",
@@ -677,7 +677,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 25000
+                          "amount": 15000
                       },
                       {
                           "category": "Transportation",
@@ -696,7 +696,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 12000
                       },
                       {
                           "category": "Utilities",
@@ -708,18 +708,18 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 15000
                       },
                       {
                           "category": "Transportation",
-                          "amount": 12000
+                          "amount": 10000
                       },
                       {
                           "category": "Shopping",
-                          "amount": 22000
+                          "amount": 12000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "December",
@@ -727,11 +727,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 10000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 20000
+                          "amount": 10000
                       },
                       {
                           "category": "Entertainment",
@@ -747,7 +747,7 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 20000
+                          "amount": 10000
                       }
                   ],
                   "income": 120000
@@ -763,7 +763,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 10000
                       },
                       {
                           "category": "Utilities",
@@ -794,7 +794,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 8000
                       },
                       {
                           "category": "Utilities",
@@ -814,10 +814,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 27000
+                          "amount": 17000
                       }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "March",
@@ -825,11 +825,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 12000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 16000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -837,7 +837,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 20000
                       },
                       {
                           "category": "Transportation",
@@ -848,7 +848,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "April",
@@ -856,7 +856,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 22000
                       },
                       {
                           "category": "Utilities",
@@ -868,18 +868,18 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 22000
+                          "amount": 20000
                       },
                       {
                           "category": "Transportation",
-                          "amount": 8000
+                          "amount": 12000
                       },
                       {
                           "category": "Shopping",
-                          "amount": 27000
+                          "amount": 20000
                       }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "May",
@@ -887,19 +887,19 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 13000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 20000
-                      },
-                      {
-                          "category": "Entertainment",
                           "amount": 15000
                       },
                       {
+                          "category": "Entertainment",
+                          "amount": 13000
+                      },
+                      {
                           "category": "My Bills",
-                          "amount": 25000
+                          "amount": 22000
                       },
                       {
                           "category": "Transportation",
@@ -907,7 +907,7 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 20000
+                          "amount": 18000
                       }
                   ],
                   "income": 120000
@@ -918,11 +918,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 12000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 16000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -930,7 +930,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 20000
                       },
                       {
                           "category": "Transportation",
@@ -938,10 +938,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 22000
+                          "amount": 19000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "July",
@@ -949,11 +949,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 23000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 16000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -961,7 +961,7 @@
                       },
                       {
                           "category": "My Bills",
-                          "amount": 23000
+                          "amount": 13000
                       },
                       {
                           "category": "Transportation",
@@ -969,10 +969,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 22000
+                          "amount": 15000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "August",
@@ -980,11 +980,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 18000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 18000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
@@ -1000,10 +1000,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 27000
+                          "amount": 20000
                       }
                   ],
-                  "income": 117000
+                  "income":120000
               },
               {
                   "month": "September",
@@ -1011,15 +1011,15 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 22000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 20000
+                          "amount": 15000
                       },
                       {
                           "category": "Entertainment",
-                          "amount": 15000
+                          "amount": 10000
                       },
                       {
                           "category": "My Bills",
@@ -1031,7 +1031,7 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 20000
+                          "amount": 15000
                       }
                   ],
                   "income": 120000
@@ -1042,15 +1042,15 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 15000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 20000
+                          "amount": 12000
                       },
                       {
                           "category": "Entertainment",
-                          "amount": 15000
+                          "amount": 18000
                       },
                       {
                           "category": "My Bills",
@@ -1058,11 +1058,11 @@
                       },
                       {
                           "category": "Transportation",
-                          "amount": 10000
+                          "amount": 9000
                       },
                       {
                           "category": "Shopping",
-                          "amount": 20000
+                          "amount": 21000
                       }
                   ],
                   "income": 120000
@@ -1073,11 +1073,11 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 32000
+                          "amount": 20000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 16000
+                          "amount": 10000
                       },
                       {
                           "category": "Entertainment",
@@ -1093,10 +1093,10 @@
                       },
                       {
                           "category": "Shopping",
-                          "amount": 22000
+                          "amount": 18000
                       }
                   ],
-                  "income": 115000
+                  "income":120000
               },
               {
                   "month": "December",
@@ -1104,11 +1104,11 @@
                     
                       {
                           "category": "Groceries",
-                          "amount": 28000
+                          "amount": 18000
                       },
                       {
                           "category": "Utilities",
-                          "amount": 18000
+                          "amount": 10000
                       },
                       {
                           "category": "Entertainment",
@@ -1127,7 +1127,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income": 117000
+                  "income":120000
               }
           ]
       }
