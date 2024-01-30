@@ -5,8 +5,8 @@
           "months": [
               {
                   "month": "January",
-                  "income": "80000",
                   "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -20,7 +20,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -31,15 +31,13 @@
                           "category": "Shopping",
                           "amount": 20000
                       }
-                  ]
+                  ],
+                   "income": 117000
               },
               {
                   "month": "February",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -53,7 +51,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -65,15 +63,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "March",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -87,7 +82,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -99,15 +94,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "April",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -121,7 +113,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -133,15 +125,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "May",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -155,7 +144,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -167,15 +156,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "June",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -189,7 +175,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -201,15 +187,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "July",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -223,7 +206,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -235,15 +218,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "August",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -257,7 +237,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -269,15 +249,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "September",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -291,7 +268,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -303,15 +280,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "October",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -325,7 +299,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -337,15 +311,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "November",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -359,7 +330,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -371,15 +342,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "December",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -393,7 +361,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -405,7 +373,7 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               }
           ]
       },
@@ -414,11 +382,8 @@
           "months": [
               {
                   "month": "January",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -432,7 +397,7 @@
                           "amount": 17000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 28000
                       },
                       {
@@ -444,15 +409,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 125000
+                  "income": 125000
               },
               {
                   "month": "February",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -466,7 +428,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -478,15 +440,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "March",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -500,7 +459,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -512,15 +471,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "April",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -534,7 +490,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -546,15 +502,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "May",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -568,7 +521,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -580,15 +533,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "June",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -602,7 +552,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -614,15 +564,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "July",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -636,7 +583,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -648,15 +595,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "August",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -670,7 +614,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -682,15 +626,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "September",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -704,7 +645,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -716,15 +657,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "October",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -738,7 +676,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -750,15 +688,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "November",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -772,7 +707,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -784,15 +719,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "December",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -806,7 +738,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -818,7 +750,7 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               }
           ]
       },
@@ -827,11 +759,8 @@
           "months": [
               {
                   "month": "January",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -845,7 +774,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -857,15 +786,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "February",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -879,7 +805,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -891,15 +817,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "March",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -913,7 +836,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -925,15 +848,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "April",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -947,7 +867,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -959,15 +879,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "May",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -981,7 +898,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -993,15 +910,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "June",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -1015,7 +929,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -1027,15 +941,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "July",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -1049,7 +960,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -1061,15 +972,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "August",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -1083,7 +991,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -1095,15 +1003,12 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               },
               {
                   "month": "September",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -1117,7 +1022,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -1129,15 +1034,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "October",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 30000
@@ -1151,7 +1053,7 @@
                           "amount": 15000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 25000
                       },
                       {
@@ -1163,15 +1065,12 @@
                           "amount": 20000
                       }
                   ],
-                  "totalAmount": 120000
+                  "income": 120000
               },
               {
                   "month": "November",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": 80000
-                      },
+                  "expenses": [
+                     
                       {
                           "category": "Groceries",
                           "amount": 32000
@@ -1185,7 +1084,7 @@
                           "amount": 10000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 23000
                       },
                       {
@@ -1197,15 +1096,12 @@
                           "amount": 22000
                       }
                   ],
-                  "totalAmount": 115000
+                  "income": 115000
               },
               {
                   "month": "December",
-                  "categories": [
-                      {
-                          "category": "Salary",
-                          "amount": "80000"
-                      },
+                  "expenses": [
+                    
                       {
                           "category": "Groceries",
                           "amount": 28000
@@ -1219,7 +1115,7 @@
                           "amount": 12000
                       },
                       {
-                          "category": "Dining Out",
+                          "category": "My Bills",
                           "amount": 22000
                       },
                       {
@@ -1231,7 +1127,7 @@
                           "amount": 27000
                       }
                   ],
-                  "totalAmount": 117000
+                  "income": 117000
               }
           ]
       }

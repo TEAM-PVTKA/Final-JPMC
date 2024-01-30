@@ -1,97 +1,57 @@
-import { Component } from '@angular/core';
-
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { homePieChart, barCharts } from '../chartoptions';
+import { LimitsService } from '../service/limits.service';
+import { Expenses, MonthlyData } from '../service/data.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
-  Highcharts = Highcharts;
-
-  areachart: any = {
-    chart: {
-      type: 'bar',
-    },
-    title: {
-      text: 'Historic World Population by Region',
-      align: 'left',
-    },
-    subtitle: {
-      text:
-        'Source: <a ' +
-        'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
-        'target="_blank">Wikipedia.org</a>',
-      align: 'left',
-    },
-    xAxis: {
-      categories: ['Africa', 'America', 'Asia', 'Europe'],
-      title: {
-        text: null,
-      },
-      gridLineWidth: 1,
-      lineWidth: 0,
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: 'Population (millions)',
-        align: 'high',
-      },
-      labels: {
-        overflow: 'justify',
-      },
-      gridLineWidth: 0,
-    },
-    tooltip: {
-      valueSuffix: ' millions',
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: '50%',
-        dataLabels: {
-          enabled: true,
-        },
-        groupPadding: 0.1,
-      },
-    },
-    legend: {
-      layout: 'vertical',
-      align: 'right',
-      verticalAlign: 'top',
-      x: -40,
-      y: 80,
-      floating: true,
-      borderWidth: 1,
-      backgroundColor: '#FFFFFF',
-      shadow: true,
-    },
-    credits: {
-      enabled: false,
-    },
+export class HomeComponent implements OnInit {
+  constructor(private service: LimitsService) {}
+  highcharts = Highcharts;
+  homePieChart = {
+    ...homePieChart,
     series: [
       {
-        name: 'Year 1990',
-        data: [631, 727, 3202, 721],
-      },
-      {
-        name: 'Year 2000',
-        data: [814, 841, 3714, 726],
-      },
-      {
-        name: 'Year 2018',
-        data: [1276, 1007, 4561, 746],
+        name: 'Percentage',
+        colorByPoint: true,
+        data: [
+          { name: 'Groceries', y: 35.02 },
+          { name: 'Utilities', sliced: true, selected: true, y: 26.71 },
+          { name: 'Entertainment', y: 5.09 },
+          { name: 'My Bills', y: 15.5 },
+          { name: 'Transportation', y: 6.68 },
+          { name: 'Shopping', y: 10 },
+        ],
       },
     ],
   };
 
-  // colorTheme = 'theme-blue';
-  datePickerConfig: Partial<BsDatepickerConfig>;
+  barCharts = {
+    ...barCharts,
+    series: [
+      {
+        name: 'Income',
+        data: [406292, 260000, 107000, 68300, 27500, 14500],
+      },
+      {
+        name: 'Expenses',
+        data: [51086, 136000, 5500, 141000, 107180, 77000],
+      },
+    ],
+  };
 
-  // In the constructor set containerClass property to the preferred theme
-  constructor() {
-    this.datePickerConfig = Object.assign({}, { containerClass: 'theme-blue' });
+  ngOnInit(): void {
+    setTimeout(() => {
+      const monthyData: MonthlyData = this.service.getMonthlyData(1, 2022);
+      console.log(monthyData);
+      const data = monthyData.expenses?.map((e: Expenses) => {
+        return { name: e.category, y: +e.amount / +monthyData.income };
+      });
+      console.log(data);
+    }, 2000);
   }
 }

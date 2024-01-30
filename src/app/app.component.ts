@@ -14,15 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private service: LimitsService) {}
 
   ngOnInit(): void {
-    localStorage.setItem(Constants.TOKEN,'')
-    localStorage.getItem(Constants.TOKEN)
-    console.log('CALLED');
-    this.service.getData().subscribe((data: UploadData) => {
-      console.log(data);
-      this.service.uploadedData = data;
-    });
-    setTimeout(() => {
-      console.log(this.service.getYearlyIncome(2022));
-    }, 2000);
+    localStorage.setItem(Constants.TOKEN, '');
+    localStorage.getItem(Constants.TOKEN);
+    console.log(this.service.uploadedData);
   }
 }

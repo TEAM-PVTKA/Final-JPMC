@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
+  
   { path: 'alerts', component: AlertsComponent },
   { path: 'cards', component: CardsComponent },
   { path: 'coupons', component: CouponsComponent },

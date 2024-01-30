@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,8 @@ import { CouponsComponent } from './coupons/coupons.component';
 import { DataComponent } from './data/data.component';
 import { SavingrecommendationsComponent } from './savingrecommendations/savingrecommendations.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LimitsService } from './service/limits.service';
+import { Series } from 'highcharts';
 
 @NgModule({
   declarations: [
@@ -33,20 +35,31 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     CouponsComponent,
     DataComponent,
-    SavingrecommendationsComponent
+    SavingrecommendationsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     CommonModule,
 
-    HighchartsChartModule
+    HighchartsChartModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent, HomeComponent]
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      multi: true,
+      deps: [LimitsService],
+    },
+  ],
+
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+export function initializeApp(service: LimitsService) {
+  return () => service.setData();
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LimitsService } from '../service/limits.service';
+import { Expenses, MonthlyData } from '../service/data.model';
 
 @Component({
   selector: 'app-limits',
@@ -8,12 +9,12 @@ import { LimitsService } from '../service/limits.service';
 })
 export class LimitsComponent {
   categOptions: string[] = [
-    'Health',
-    'Bills',
-    'Accessories',
-    'Education',
-    'Insurance',
-    'Travelling',
+    'Groceries',
+    'Utilities',
+    'Entertainment',
+    'My Bills',
+    'Transportation',
+    'Shopping',
   ]; // Simulated card options
   selectedCateg: string = '';
   newLimit: number = 5000; // Initial value within the range
@@ -26,24 +27,29 @@ export class LimitsComponent {
   mylimit: any | number;
   mylimits: any | number;
 
-  constructor(private a: LimitsService) {}
+  limArray = [];
+
+  flag: boolean = false;
+
+  constructor(private limitser: LimitsService) {}
 
   //for submit button
 
   submit() {
     this.mylimit = this.mylimits;
-    
   }
 
-  ngOnInit(){
-    
-  }
+  ngOnInit() {}
+
+  
 
   handleSetLimit() {
     if (this.selectedCateg.trim() === '') {
       // Do not proceed if the entered category name is null or empty
-      alert(`No Category have been selected.. Please Check it once`);
+      this.flag = true
       return;
+
+    
     }
 
     // console.log(`Setting limit for card ${this.selectedCard} to ${this.newLimit}`);
@@ -62,20 +68,24 @@ export class LimitsComponent {
         // Clear the selected category
         this.selectedCateg = '';
         // console.log(this.a.totalAmount())
-
-
-
-
-
-
-
-
-
-
-
       }
     }
   }
+
+  // Removing Element
+
+  remove(limit: Expenses) {
+    this.limitser.delCategory(limit);
+  }
+
+  // update(p:[]){
+  //   this.flag = true
+  // }
+
+  // savep(){
+  //   this.flag = false
+  //   // this.fservice.updatepro(p)
+  // }
 
   handleInput(event: any) {
     const enteredValue = event.target.value;
@@ -89,3 +99,9 @@ export class LimitsComponent {
     }
   }
 }
+
+// if (ele.categories == i.categOptions) {
+//   return ele.categories;
+// }
+// this.limArray.splice(index, 1);
+// });

@@ -1,1 +1,41 @@
-<p>data works!</p>
+<div class="frame">
+    <div class="center">
+        <div class="title">
+            <h1>Drop file to upload</h1>
+        </div>
+
+        <div class="dropzone">
+            <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+            <input type="file" class="upload-input" (change)="onChange($event)" #fileUpload />
+        </div>
+
+        <button class="btn" (click)="onUpload()">Upload file</button>
+        <div *ngIf="file">
+            <section class="file-info">
+                File details:
+                <ul>
+                    <li>Name: {{file.name}}</li>
+                    <!-- <li>Type: {{file.type}}</li> -->
+                    <li>Size: {{file.size}} bytes</li>
+                </ul>
+            </section>
+
+            <!-- <button (click)="onUpload()">Upload the file</button> -->
+
+            <section [ngSwitch]="status">
+                <p *ngSwitchCase="'uploading'">⏳ Uploading...</p>
+                <p *ngSwitchCase="'success'">✅ Done!</p>
+                <p *ngSwitchCase="'fail'">❌ Error!</p>
+                <!-- <p *ngSwitchDefault>😶 Waiting to upload...</p> -->
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- <h2>Single File Upload</h2> -->
+
+<!-- <input type="file" class="file-input" (change)="onChange($event)" #fileUpload /> -->
+
+
+
+<!-- NO JS ADDED YET -->
