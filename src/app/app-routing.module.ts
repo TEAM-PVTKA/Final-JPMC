@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'login', component:LoginComponent },
   { path: 'home', component: HomeComponent },
   
   { path: 'alerts', component: AlertsComponent },
