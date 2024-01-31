@@ -81,13 +81,4 @@ export class LimitsService {
     return income;
   }
 
-  // getMonthlyIncome(month:number):MonthlyData[]{
-  //   // const today = new Date();
-  //   // let currentMonth = today.getMonth();
-
-  //   const monthNumber: MonthlyData = this.monthData?.income
-
-  //   return monthNumber
-
-  // }
 }

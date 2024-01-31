@@ -572,7 +572,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 15000
+                          "amount": 10000
                       },
                       {
                           "category": "Utilities",
@@ -595,7 +595,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income":70000
+                  "income":100000
               },
               {
                   "month": "August",
@@ -607,11 +607,11 @@
                       },
                       {
                           "category": "Utilities",
-                          "amount": 18000
+                          "amount": 8000
                       },
                       {
                           "category": "Entertainment",
-                          "amount": 12000
+                          "amount": 10000
                       },
                       {
                           "category": "My Bills",
@@ -626,7 +626,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income":80000
+                  "income":95000
               },
               {
                   "month": "September",

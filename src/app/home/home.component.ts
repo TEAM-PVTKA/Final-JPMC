@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { homePieChart, barCharts } from '../chartoptions';
 import { LimitsService } from '../service/limits.service';
-import { Expenses, MonthlyData } from '../service/data.model';
+import { Expenses, MonthlyData, UploadData } from '../service/data.model';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     this.getMonthlySummary();
     this.getHalfYearlySummary();
   }
+
 
   getMonthlySummary() {
     const date = new Date();
@@ -42,9 +43,47 @@ export class HomeComponent implements OnInit {
     };
   }
 
-  getMonthlyIncome(){
-    // const monthlyIncome: MonthlyData = this.service.monthData?.income
-    return this.service.monthData?.income
+  getMonthlyIncome() {
+    const date = new Date();
+    const monthNumber: MonthlyData = this.service.getMonthlyData(
+      date.getMonth() + 1,
+      date.getFullYear()
+    );
+    let monthlyInc = monthNumber.income;
+    return monthlyInc;
+  }
+
+  getMonthlyExpenditure() {
+    let expensesPerMonth = 0;
+    const date = new Date();
+    const monthNumber: MonthlyData = this.service.getMonthlyData(
+      date.getMonth() + 1,
+      date.getFullYear()
+    );
+
+    monthNumber.expenses.forEach((f: Expenses) => {
+      expensesPerMonth = expensesPerMonth + f.amount;
+    });
+
+    return expensesPerMonth;
+  }
+
+  getSavings() {
+    let expensesPerMonth = 0;
+    const date = new Date();
+    const monthNumber: MonthlyData = this.service.getMonthlyData(
+      date.getMonth() + 1,
+      date.getFullYear()
+    );
+
+    const monthlyInc = monthNumber.income;
+
+    monthNumber.expenses.forEach((f: Expenses) => {
+      expensesPerMonth = expensesPerMonth + f.amount;
+    });
+
+    const savingsPerMonth = monthlyInc - expensesPerMonth;
+    return savingsPerMonth;
   }
 
   getHalfYearlySummary() {
@@ -74,10 +113,12 @@ export class HomeComponent implements OnInit {
       series: [
         {
           name: 'Income',
+          color: 'green',
           data: incomeArray,
         },
         {
           name: 'Expenses',
+          color: 'red',
           data: expensesArray,
         },
       ],

@@ -88,31 +88,13 @@ export const splineCharts: any = {
   title: {
     text: 'Your Expenses',
   },
-  xAxis: {
-    categories: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ],
-    accessibility: {
-      description: 'Months of the year',
-    },
-  },
+  
   yAxis: {
     title: {
       text: 'Expenses',
     },
     labels: {
-      format: '{value}RS',
+      format: '₹{value}',
     },
   },
   tooltip: {
