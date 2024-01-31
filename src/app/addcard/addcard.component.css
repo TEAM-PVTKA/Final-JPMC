@@ -1,5 +1,5 @@
 .container {
-    height: 350px;
+    height: 260px;
     width: 530px;
     background: linear-gradient(to bottom, black, #910A67);
     border-radius: 10px;
@@ -31,19 +31,19 @@
     font-size: 12px;
 }
 
-.card {
+#card {
     color: white;
     font-size: 12px;
 }
 
-.cardbody {
-   
-    height:fit-content
+.body {
+    background-color: #785BF8;
 }
 
 
-placeholder {
-    color: white
+.name{
+    color: white;
+    font-size: 19px;
 }
 
 p {
@@ -53,4 +53,14 @@ p {
 
 label {
     color: white
+}
+
+.date{
+    color: white 
+}
+.col-md-3{
+    color: white 
+}
+.cholder{
+    color: white 
 }

@@ -1,66 +1,44 @@
-<div class="frame">
-    <div class="center">
-        <div class="title">
-            <h1>Drop file to upload</h1>
+<div class="container-fluid mt-5">
+    <div class="row mt-5">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5 mb-5 mydata">
+            <div class="d-flex justify-content-center">
+                <h2>Upload Your File Here</h2>
+            </div>
+
+            <div class="container d-flex justify-content-center mb-5">
+                <form id="file-upload-form" class="uploader">
+                    <div class="row">
+                        <label for="formFileMultiple" class="form-label">Select Your File:</label>
+                        <input class="form-control" type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
+                    </div>
+                    <div class="row">
+                        <p *ngIf="fileError" class="error-message" style="color: red">{{ fileError }}</p>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="fileSelected" class="file-preview">
+                            <p class="text-primary">Selected File: {{ file?.name }}</p>
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <button class=" btn btn-success" (click)="upload()">Upload</button>
+                            </div>
+
+                            <div class="mt-5" *ngIf="!flag">
+
+                                <div class="alert alert-success alert-dismissible fade show myalerts hide" role="alert">
+
+                                    <div>
+                                        <i class="fa-regular fa-circle-check"></i> File uploaded successfully
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
         </div>
-
-        <div class="dropzone">
-            <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-            <input type="file" class="upload-input" (change)="onChange($event)" #fileUpload />
-        </div>
-
-        <button class="btn" (click)="onUpload()">Upload file</button>
-        <div *ngIf="file">
-            <section class="file-info">
-                File details:
-                <ul>
-                    <li>Name: {{file.name}}</li>
-                    <!-- <li>Type: {{file.type}}</li> -->
-                    <li>Size: {{file.size}} bytes</li>
-                </ul>
-            </section>
-
-            <!-- <button (click)="onUpload()">Upload the file</button> -->
-
-            <section [ngSwitch]="status">
-                <p *ngSwitchCase="'uploading'">⏳ Uploading...</p>
-                <p *ngSwitchCase="'success'">✅ Done!</p>
-                <p *ngSwitchCase="'fail'">❌ Error!</p>
-                <!-- <p *ngSwitchDefault>😶 Waiting to upload...</p> -->
-            </section>
-        </div>
+        <div class="col-md-4"></div>
     </div>
 </div>
-
-<!-- <h2>Single File Upload</h2> -->
-
-<!-- <input type="file" class="file-input" (change)="onChange($event)" #fileUpload /> -->
-
-
-
-<!-- NO JS ADDED YET -->
-
-
-<h2>File Upload & Image Preview</h2>
-<p class="lead">No Plugins <b>Just Javascript</b></p>
-
-Upload
-<form id="file-upload-form" class="uploader">
-    <input id="file-upload" type="file" name="fileUpload" accept=".xls, .xlsx" />
-
-    <label for="file-upload" id="file-drag">
-        <img id="file-image" src="#" alt="Preview" class="hidden">
-        <div id="start">
-            <i class="fa fa-download" aria-hidden="true"></i>
-            <div>Select a file or drag here</div>
-            <div id="notimage" class="hidden">Please select an image</div>
-            <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
-        </div>
-        <div id="response" class="hidden">
-            <div id="messages"></div>
-            <progress class="progress" id="file-progress" value="0">
-                <span>0</span>%
-            </progress>
-        </div>
-    </label>
-</form>

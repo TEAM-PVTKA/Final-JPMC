@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LimitsService } from './service/limits.service';
 import { Series } from 'highcharts';
 import { ExpensesComponent } from './expenses/expenses.component';
+import { AddcardComponent } from './addcard/addcard.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ExpensesComponent } from './expenses/expenses.component';
     CouponsComponent,
     DataComponent,
     ExpensesComponent,
+    AddcardComponent,
   ],
   imports: [
     BrowserModule,

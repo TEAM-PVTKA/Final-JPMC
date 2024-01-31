@@ -22,12 +22,11 @@ export class LimitsComponent {
   categoryNames: string[] = [];
   totalValue: any | number = 0;
   totalSpendingLimit: number = 20000; // Initial total spending limit
+
   categories: { name: string; limit: number; totalValue: number }[] = [];
 
   mylimit: any | number;
   mylimits: any | number;
-
-  limArray = [];
 
   flag: boolean = false;
 
@@ -41,15 +40,11 @@ export class LimitsComponent {
 
   ngOnInit() {}
 
-  
-
   handleSetLimit() {
     if (this.selectedCateg.trim() === '') {
       // Do not proceed if the entered category name is null or empty
-      this.flag = true
+      this.flag = true;
       return;
-
-    
     }
 
     // console.log(`Setting limit for card ${this.selectedCard} to ${this.newLimit}`);
@@ -75,7 +70,7 @@ export class LimitsComponent {
   // Removing Element
 
   remove(limit: Expenses) {
-    this.limitser.delCategory(limit);
+    this.limitser.delcateg(limit);
   }
 
   // update(p:[]){

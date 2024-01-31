@@ -80,3 +80,42 @@ export const barCharts: any = {
   },
   series: [],
 };
+
+export const splineCharts : any = {
+  chart: {
+    type: 'spline',
+  },
+  title: {
+    text: 'Your Expenses',
+  },
+  xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    accessibility: {
+      description: 'Months of the year',
+    },
+  },
+  yAxis: {
+    title: {
+      text: 'Expenses',
+    },
+    labels: {
+      format: '{value}RS',
+    },
+  },
+  tooltip: {
+    crosshairs: true,
+    shared: true,
+  },
+  plotOptions: {
+    spline: {
+      marker: {
+        radius: 4,
+        lineColor: '#666666',
+        lineWidth: 1,
+      },
+    },
+  },
+  series: [
+    
+  ],
+};

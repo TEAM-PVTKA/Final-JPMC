@@ -13,9 +13,25 @@ export class LimitsService {
   monthData: MonthlyData | null = null;
   expensesData: Expenses | null = null;
 
-  // categArray: MonthlyData[] = [];
+  categArray: Expenses[] = [];
 
   constructor(private http: HttpClient) {}
+
+  // By T
+  getcateglen(){
+    return this.categArray.length
+  }
+
+  delcateg(p:Expenses){
+    let ind = this.categArray.findIndex((ele)=>{
+      if(ele.amount == p.amount){
+        return ele.amount
+      }
+    })
+      this.categArray.splice(ind,1)
+  }
+
+
 
   //written by team
   getData() {
@@ -39,16 +55,9 @@ export class LimitsService {
     });
   }
 
-  delCategory(p: Expenses) {
-    if (this.monthData) {
-      let ind = this.monthData.expenses.findIndex(
-        (ele) => ele.category === p.category
-      );
-      // this.categArray.splice(ind, 1);
+ 
 
-      console.log(ind);
-    }
-  }
+
   //written by team
   getMonthlyData(mm: number, yyyy: number): MonthlyData {
     const yearData: YearData = this.uploadedData?.years.filter(
