@@ -10,13 +10,13 @@ import { DataComponent } from './data/data.component';
 import { LimitsComponent } from './limits/limits.component';
 import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
-import { AddcardComponent } from './addcard/addcard.component';
+import { CardListComponent } from './cards/cardlist/cardlist.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'mycards', component: AddcardComponent },
+  { path: 'mycards', component: CardListComponent },
 
   { path: 'alerts', component: AlertsComponent },
   { path: 'cards', component: CardsComponent },

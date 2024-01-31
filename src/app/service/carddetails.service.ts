@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
-import { carddetails } from './carddetails';
-import { of } from 'rxjs';
+import { Subject, of } from 'rxjs';
+import { CardDetails } from '../cards/cards.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CarddetailsService {
-
-  details:carddetails[]=[
-   
-  ]
-    constructor() { }
-    getcarddetails(){
-      return of(this.details)
-    }
-    addcarddetails(newpro:carddetails){
-      this.details.push(newpro);
-    }
+export class CardDetailsService {
+  cardList: CardDetails[] = [];
+  cardList$ = new Subject<CardDetails[]>()
+  constructor() {}
+  // getCardDetails() {
+  //   return of(this.cardList);
+  // }
+  // addCardDetails(card: CardDetails) {
+  //   this.cardList.push(card);
+  // }
 
 }

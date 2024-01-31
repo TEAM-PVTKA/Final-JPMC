@@ -48,7 +48,7 @@ export const barCharts: any = {
     text: 'Yearly Expenses',
     align: 'left',
   },
-  
+
   xAxis: {
     categories: [
       'Groceries',
@@ -66,11 +66,11 @@ export const barCharts: any = {
   yAxis: {
     min: 0,
     title: {
-      text: '1000Rs',
+      text: '',
     },
   },
   tooltip: {
-    valueSuffix: ' (1000 RS)',
+    valuePrefix: '₹',
   },
   plotOptions: {
     column: {
@@ -81,7 +81,7 @@ export const barCharts: any = {
   series: [],
 };
 
-export const splineCharts : any = {
+export const splineCharts: any = {
   chart: {
     type: 'spline',
   },
@@ -89,7 +89,20 @@ export const splineCharts : any = {
     text: 'Your Expenses',
   },
   xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    categories: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ],
     accessibility: {
       description: 'Months of the year',
     },
@@ -115,7 +128,5 @@ export const splineCharts : any = {
       },
     },
   },
-  series: [
-    
-  ],
+  series: [],
 };

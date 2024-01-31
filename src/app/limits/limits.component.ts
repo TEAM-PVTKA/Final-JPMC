@@ -69,9 +69,9 @@ export class LimitsComponent {
 
   // Removing Element
 
-  remove(limit: Expenses) {
-    this.limitser.delcateg(limit);
-  }
+  // remove(limit: Expenses) {
+  //   this.limitser.delcateg(limit);
+  // }
 
   // update(p:[]){
   //   this.flag = true

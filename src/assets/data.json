@@ -9,7 +9,7 @@
                      
                       {
                           "category": "Groceries",
-                          "amount": 30000
+                          "amount": 20000
                       },
                       {
                           "category": "Utilities",
@@ -595,7 +595,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income":120000
+                  "income":70000
               },
               {
                   "month": "August",
@@ -626,7 +626,7 @@
                           "amount": 27000
                       }
                   ],
-                  "income":120000
+                  "income":80000
               },
               {
                   "month": "September",
@@ -657,7 +657,7 @@
                           "amount": 22000
                       }
                   ],
-                  "income":120000
+                  "income":90000
               },
               {
                   "month": "October",
@@ -688,7 +688,7 @@
                           "amount": 20000
                       }
                   ],
-                  "income": 120000
+                  "income": 100000
               },
               {
                   "month": "November",
@@ -719,7 +719,7 @@
                           "amount": 12000
                       }
                   ],
-                  "income":120000
+                  "income":110000
               },
               {
                   "month": "December",
@@ -786,7 +786,7 @@
                           "amount": 20000
                       }
                   ],
-                  "income": 120000
+                  "income": 130000
               },
               {
                   "month": "February",

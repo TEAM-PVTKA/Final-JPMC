@@ -12,46 +12,75 @@ import { Expenses, MonthlyData } from '../service/data.model';
 export class HomeComponent implements OnInit {
   constructor(private service: LimitsService) {}
   highcharts = Highcharts;
-  homePieChart = {
-    ...homePieChart,
-    series: [
-      {
-        name: 'Percentage',
-        colorByPoint: true,
-        data: [
-          { name: 'Groceries', y: 35.02 },
-          { name: 'Utilities', sliced: true, selected: true, y: 26.71 },
-          { name: 'Entertainment', y: 5.09 },
-          { name: 'My Bills', y: 15.5 },
-          { name: 'Transportation', y: 6.68 },
-          { name: 'Shopping', y: 10 },
-        ],
-      },
-    ],
-  };
+  homePieChart = null;
 
-  barCharts = {
-    ...barCharts,
-    series: [
-      {
-        name: 'Income',
-        data: [51086, 136000, 5500, 141000, 107180, 77000],
-      },
-      {
-        name: 'Expenses',
-        data: [406292, 260000, 107000, 68300, 27500, 14500],
-      },
-    ],
-  };
+  barCharts = null;
 
   ngOnInit(): void {
-    setTimeout(() => {
-      const monthyData: MonthlyData = this.service.getMonthlyData(1, 2022);
-      console.log(monthyData);
-      const data = monthyData.expenses?.map((e: Expenses) => {
-        return { name: e.category, y: +e.amount / +monthyData.income };
+    this.getMonthlySummary();
+    this.getHalfYearlySummary();
+  }
+
+  getMonthlySummary() {
+    const date = new Date();
+    const monthyData: MonthlyData = this.service.getMonthlyData(
+      date.getMonth() + 1,
+      date.getFullYear()
+    );
+    const data = monthyData.expenses?.map((e: Expenses) => {
+      return { name: e.category, y: (+e.amount / +monthyData.income) * 100 };
+    });
+    this.homePieChart = {
+      ...homePieChart,
+      series: [
+        {
+          name: 'Percentage',
+          colorByPoint: true,
+          data: data,
+        },
+      ],
+    };
+  }
+
+  getMonthlyIncome(){
+    const monthlyIncome: MonthlyData = ;
+    console.log(monthlyIncome.income)
+  }
+
+  getHalfYearlySummary() {
+    const incomeArray: number[] = [];
+    const expensesArray: number[] = [];
+    const monthsArray: string[] = [];
+
+    const data: MonthlyData[] = this.service.getOldMonthlyData(3);
+    data.forEach((e: MonthlyData) => {
+      let expensesPerMonth = 0;
+      incomeArray.unshift(e.income);
+      monthsArray.unshift(e.month);
+      e.expenses.forEach((f: Expenses) => {
+        expensesPerMonth = expensesPerMonth + f.amount;
       });
-      console.log(data);
-    }, 2000);
+      expensesArray.unshift(expensesPerMonth);
+    });
+    this.barCharts = {
+      ...barCharts,
+      xAxis: {
+        categories: monthsArray,
+        crosshair: true,
+        accessibility: {
+          description: 'Months',
+        },
+      },
+      series: [
+        {
+          name: 'Income',
+          data: incomeArray,
+        },
+        {
+          name: 'Expenses',
+          data: expensesArray,
+        },
+      ],
+    };
   }
 }

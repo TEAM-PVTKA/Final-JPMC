@@ -1,4 +1,9 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ApplicationRef,
+  DoBootstrap,
+  NgModule,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LimitsService } from './service/limits.service';
 import { Series } from 'highcharts';
 import { ExpensesComponent } from './expenses/expenses.component';
-import { AddcardComponent } from './addcard/addcard.component';
+import { CardListComponent } from './cards/cardlist/cardlist.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,7 @@ import { AddcardComponent } from './addcard/addcard.component';
     CouponsComponent,
     DataComponent,
     ExpensesComponent,
-    AddcardComponent,
+    CardListComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,19 +54,11 @@ import { AddcardComponent } from './addcard/addcard.component';
 
     HighchartsChartModule,
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      multi: true,
-      deps: [LimitsService],
-    },
-  ],
-
-  bootstrap: [AppComponent],
 })
-export class AppModule {}
-
-export function initializeApp(service: LimitsService) {
-  return () => service.setData();
+export class AppModule implements DoBootstrap {
+  constructor(private service: LimitsService) {}
+  ngDoBootstrap(appRef: ApplicationRef) {
+    this.service.setData(appRef);
+    // appRef.bootstrap(AppComponent);
+  }
 }
