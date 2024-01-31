@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit {
   }
 
   getMonthlyIncome(){
-    const monthlyIncome: MonthlyData = ;
-    console.log(monthlyIncome.income)
+    // const monthlyIncome: MonthlyData = this.service.monthData?.income
+    return this.service.monthData?.income
   }
 
   getHalfYearlySummary() {
