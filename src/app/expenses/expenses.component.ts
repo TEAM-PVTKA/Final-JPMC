@@ -20,8 +20,8 @@ export class ExpensesComponent {
 
   ngOnInit(): void {
     this.getThreeMonthSummary();
-    this.getHalfYearlySummary();
-    this.getYearlySummary();
+    // this.getHalfYearlySummary();
+    // this.getYearlySummary();
   }
 
   showChart(chartType: string): void {
@@ -56,6 +56,7 @@ export class ExpensesComponent {
       });
       expensesArray.unshift(expensesPerMonth);
       savingsArray.unshift(savingsPerMonth);
+      console.log(monthsArray)
     });
 
     this.splineCharts1 = {

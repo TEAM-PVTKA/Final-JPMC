@@ -11,9 +11,15 @@ export interface MonthlyData {
   month: string;
   income: number;
   expenses: Expenses[];
+  limits: Limits[];
 }
 
 export interface Expenses {
+  category: string;
+  amount: number;
+}
+
+export interface Limits {
   category: string;
   amount: number;
 }

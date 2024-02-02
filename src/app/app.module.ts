@@ -29,6 +29,7 @@ import { LimitsService } from './service/limits.service';
 import { Series } from 'highcharts';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { CardListComponent } from './cards/cardlist/cardlist.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CardListComponent } from './cards/cardlist/cardlist.component';
     DataComponent,
     ExpensesComponent,
     CardListComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

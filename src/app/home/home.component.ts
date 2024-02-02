@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { homePieChart, barCharts } from '../chartoptions';
 import { LimitsService } from '../service/limits.service';
-import { Expenses, MonthlyData, UploadData } from '../service/data.model';
+import {
+  Expenses,
+  Limits,
+  MonthlyData,
+  UploadData,
+} from '../service/data.model';
 
 @Component({
   selector: 'app-home',
@@ -18,29 +23,19 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMonthlySummary();
+    this.getMonthlyLimitstsVsExp();
     this.getHalfYearlySummary();
   }
 
-
-  getMonthlySummary() {
+  getMonthlyLimits() {
     const date = new Date();
-    const monthyData: MonthlyData = this.service.getMonthlyData(
+    const monthNumber: MonthlyData = this.service.getMonthlyData(
       date.getMonth() + 1,
       date.getFullYear()
     );
-    const data = monthyData.expenses?.map((e: Expenses) => {
-      return { name: e.category, y: (+e.amount / +monthyData.income) * 100 };
-    });
-    this.homePieChart = {
-      ...homePieChart,
-      series: [
-        {
-          name: 'Percentage',
-          colorByPoint: true,
-          data: data,
-        },
-      ],
-    };
+
+    let monthlyLimits = monthNumber.limits;
+    return monthlyLimits;
   }
 
   getMonthlyIncome() {
@@ -91,7 +86,7 @@ export class HomeComponent implements OnInit {
     const expensesArray: number[] = [];
     const monthsArray: string[] = [];
 
-    const data: MonthlyData[] = this.service.getOldMonthlyData(3);
+    const data: MonthlyData[] = this.service.getOldMonthlyData(6);
     data.forEach((e: MonthlyData) => {
       let expensesPerMonth = 0;
       incomeArray.unshift(e.income);
@@ -101,10 +96,73 @@ export class HomeComponent implements OnInit {
       });
       expensesArray.unshift(expensesPerMonth);
     });
+  }
+
+  getMonthlySummary() {
+    const date = new Date();
+    const monthyData: MonthlyData = this.service.getMonthlyData(
+      date.getMonth() + 1,
+      date.getFullYear()
+    );
+
+    const data = monthyData.expenses?.map((e: Expenses) => {
+      return { name: e.category, y: +e.amount };
+    });
+
+    this.homePieChart = {
+      ...homePieChart,
+      series: [
+        {
+          name: 'number',
+          colorByPoint: true,
+          data: data,
+        },
+      ],
+    };
+  }
+
+  getMonthlyLimitstsVsExp() {
+    const limitsArray: number[] = [];
+    const expensesArray: number[] = [];
+    const monthsArray: string[] = [];
+    const categoryArray: string[] = [];
+
+    const data: MonthlyData[] = this.service.getOldMonthlyData(6);
+    data.forEach((e: MonthlyData) => {
+      let expensesPerMonth = 0;
+      let limitsPerMonth = 0;
+
+      // limitsArray.unshift(e.income);
+      monthsArray.unshift(e.month);
+      e.expenses.forEach((f: Expenses) => {
+        expensesPerMonth = expensesPerMonth + f.amount;
+        // console.log(categoryNames);
+      });
+
+      e.expenses.forEach((g: Limits) => {
+        limitsPerMonth = limitsPerMonth + g.amount;
+        console.log(g.amount);
+      });
+
+      expensesArray.unshift(expensesPerMonth);
+      limitsArray.unshift(limitsPerMonth);
+    });
+
+    const data2: MonthlyData[] = this.service.getOldMonthlyData(6);
+    const categArray: string[] = [];
+
+    data2.forEach((e: MonthlyData) => {
+      let categoryList = '';
+      e.expenses.forEach((f: Expenses) => {
+        categoryList = f.category;
+      });
+      categoryArray.push();
+    });
+
     this.barCharts = {
       ...barCharts,
       xAxis: {
-        categories: monthsArray,
+        categories: categoryArray,
         crosshair: true,
         accessibility: {
           description: 'Months',
@@ -112,9 +170,9 @@ export class HomeComponent implements OnInit {
       },
       series: [
         {
-          name: 'Income',
+          name: 'Limits',
           color: 'green',
-          data: incomeArray,
+          data: limitsArray,
         },
         {
           name: 'Expenses',

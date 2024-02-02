@@ -1,6 +1,6 @@
-<div class="cardbody">
+<!-- <div class="cardbody">
     <div class="container mt-5 body">
-        <form novalidate>
+        <form #newForm="ngForm" novalidate>
             <div class="row">
                 <div class="col-md-6 mt-3 visa"><i>VISA</i></div>
                 <div class="col-md-6 mt-4" id="card">ENTER DETAILS</div>
@@ -14,8 +14,8 @@
                 <div class="row mt-2">
 
                     <div class="col-md-3 ">
-                        <input type="text" (ngModelChange)="onValueChange('cardNumber1',$event)" class="form-control" name="cardNumber1" [(ngModel)]="cardNumber1"
-                            placeholder="XXXX" maxlength="4" required>
+                        <input type="text" (ngModelChange)="onValueChange('cardNumber1',$event)" class="form-control"
+                            name="cardNumber1" [(ngModel)]="cardNumber1" placeholder="XXXX" maxlength="4" required>
                     </div>
                     <div class="col-md-1">
                         <p>-</p>
@@ -36,19 +36,20 @@
             </div>
 
             <div class="row mt-4" id="date">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <label for="usr">EXPIRY</label>
-                    <input type="month" class="form-control input2 col-md-4 mt-2" name="cardExpiry"
-                        [(ngModel)]="cardExpiry" placeholder="MM/YY" required>
+                    <input type="month" class="form-control input2" name="cardExpiry" [(ngModel)]="cardExpiry"
+                        placeholder="MM/YY" required>
                 </div>
             </div>
+
+
             <div class="row mt-4" id="name">
-                <div class="col">
+                <div class="col-md-7">
                     <div class="form-group">
                         <label for="usr">CARD HOLDER</label>
-                        <input type="text" class="form-control input1 col-md-4 mt-2" name="cardHolder"
-                            placeholder="Name" [(ngModel)]="cardHolder"
-                            oninput="this.value = this.value.replace(/[^a-z, ]/, '')">
+                        <input type="text" class="form-control input1" name="cardHolder" placeholder="Card Holder Name"
+                            [(ngModel)]="cardHolder" oninput="this.value = this.value.replace(/[^a-z, ]/, '')">
                     </div>
                 </div>
             </div>
@@ -58,6 +59,80 @@
     </div>
     <div class="form-group d-flex mt-2 justify-content-center">
         <button class="btn btn-success" (click)="addCard()">Submit</button>
+        <button class="btn btn-danger" (click)="resetform(newForm)">Reset</button>
+    </div>
+
+    <app-cardlist></app-cardlist>
+</div> -->
+
+
+<div class="cardbody">
+    <div class="container mt-5 body">
+        <form #newForm="ngForm" novalidate>
+            <div class="row">
+                <div class="col-md-6 mt-3 visa">
+                    <i>VISA</i>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end mt-3">
+                    <button class="btn btn-outline-light" (click)="addCard()">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row mt-3" id="num">
+                <div class="col-md-12">CARD NUMBER</div>
+            </div>
+            <div class="c-details">
+
+                <div class="row mt-2">
+
+                    <div class="col-md-3 ">
+                        <input type="text" (ngModelChange)="onValueChange('cardNumber1',$event)" class="form-control"
+                            name="cardNumber1" [(ngModel)]="cardNumber1" placeholder="XXXX" maxlength="4" required>
+                    </div>
+                    <div class="col-md-1">
+                        <p>-</p>
+                    </div>
+                    <div class="col-md-3 ">
+                        <input type="text" (ngModelChange)="onValueChange('cardNumber1',$event)" class="form-control"
+                            name="cardNumber2" [(ngModel)]="cardNumber2" placeholder="XXXX" maxlength="4" required>
+                    </div>
+                    <div class="col-md-1">
+                        <p>-</p>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" (ngModelChange)="onValueChange('cardNumber1',$event)" class="form-control"
+                            name="cardNumber3" [(ngModel)]="cardNumber3" placeholder="XXXX" maxlength="4" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-4" id="date">
+                <div class="col-md-5">
+                    <label for="usr">EXPIRY</label>
+                    <input type="month" class="form-control input2" name="cardExpiry" [(ngModel)]="cardExpiry"
+                        placeholder="MM/YY" required>
+                </div>
+            </div>
+
+
+            <div class="row mt-4" id="name">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="usr">CARD HOLDER</label>
+                        <input type="text" class="form-control input1" name="cardHolder" placeholder="Card Holder Name"
+                            [(ngModel)]="cardHolder" oninput="this.value = this.value.replace(/[^a-z, ]/, '')">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="form-group d-flex mt-2 justify-content-center">
+        <button class="btn btn-danger" (click)="resetform(newForm)">Reset</button>
     </div>
     <app-cardlist></app-cardlist>
 </div>

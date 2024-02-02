@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CardDetailsService } from '../service/carddetails.service';
 import { Router } from '@angular/router';
 import { CardDetails } from './cards.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cards',
@@ -16,6 +17,12 @@ export class CardsComponent {
   cardExpiry: number;
   cardHolder: string;
   card: CardDetails;
+
+  resetform(myForm:NgForm){
+    myForm.resetForm();
+  }
+
+
   addCard() {
     // console.log(this.cardNumber1)
     if (
@@ -26,18 +33,34 @@ export class CardsComponent {
       alert(`Card is Invalid`);
       return;
     }
+
+    const cardNumberId =
+      this.cardNumber1.toString() +
+      this.cardNumber2.toString() +
+      this.cardNumber3.toString();
+    if (
+      this.service.cardList.findIndex((e: CardDetails) => {
+        return e.cardNumberId === cardNumberId;
+      }) !== -1
+    ) {
+      alert('Duplicate Card');
+      return;
+    }
+
     this.card = {
       cardNumber1: this.cardNumber1,
       cardNumber2: this.cardNumber2,
       cardNumber3: this.cardNumber3,
       cardExpiry: this.cardExpiry,
       cardHolder: this.cardHolder,
+      cardNumberId: cardNumberId,
     };
     this.service.cardList.push(this.card);
     this.service.cardList$.next(this.service.cardList);
+    console.log(this.card);
   }
 
-  onValueChange(name:string, value: string) {
+  onValueChange(name: string, value: string) {
     // this[name]=value.replace(/[a-zA-Z]/g, '');
   }
 }

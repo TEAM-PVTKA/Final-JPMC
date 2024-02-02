@@ -61,7 +61,7 @@ export class LimitsService {
       console.log(currentMonth, currentYear);
       currentMonth = currentMonth - 1;
       if (currentMonth === 0) {
-        currentMonth = 12;
+        currentMonth = 13;
         currentYear = currentYear - 1;
       }
     }
@@ -80,5 +80,4 @@ export class LimitsService {
     });
     return income;
   }
-
 }

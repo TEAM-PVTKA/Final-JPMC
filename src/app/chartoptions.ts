@@ -8,7 +8,7 @@ export const homePieChart: any = {
     text: 'Montly Expenses',
   },
   tooltip: {
-    valueSuffix: '%',
+    valuePrefix: '₹',
   },
   plotOptions: {
     series: {
@@ -17,12 +17,12 @@ export const homePieChart: any = {
       dataLabels: [
         {
           enabled: true,
-          distance: 20,
+          distance: 10,
         },
         {
           enabled: true,
           distance: -40,
-          format: '{point.percentage:.1f}%',
+          format: '{point.percentage:.1f}',
           style: {
             fontSize: '1.2em',
             textOutline: 'none',
@@ -45,8 +45,8 @@ export const barCharts: any = {
     type: 'column',
   },
   title: {
-    text: 'Yearly Expenses',
-    align: 'left',
+    text: 'Limit vs Expenses',
+    align: 'center',
   },
 
   xAxis: {
@@ -88,7 +88,7 @@ export const splineCharts: any = {
   title: {
     text: 'Your Expenses',
   },
-  
+
   yAxis: {
     title: {
       text: 'Expenses',

@@ -11,12 +11,14 @@ import { LimitsComponent } from './limits/limits.component';
 import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { CardListComponent } from './cards/cardlist/cardlist.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'mycards', component: CardListComponent },
+  {path : 'contact', component:ContactComponent},
 
   { path: 'alerts', component: AlertsComponent },
   { path: 'cards', component: CardsComponent },
