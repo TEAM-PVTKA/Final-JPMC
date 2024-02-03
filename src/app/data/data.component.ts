@@ -43,7 +43,7 @@ export class DataComponent {
         this.flag = false;
 
         setTimeout(() => {
-          this.flag = true;
+          this.flag = true; 
         }, 2000);
         console.log('JSON Data:', jsonData);
       };

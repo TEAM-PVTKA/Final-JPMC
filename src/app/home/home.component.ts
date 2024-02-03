@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     this.getMonthlySummary();
     this.getMonthlyLimitstsVsExp();
     this.getHalfYearlySummary();
+    this.getMonthlyLimits();
   }
 
   getMonthlyLimits() {
@@ -35,7 +36,7 @@ export class HomeComponent implements OnInit {
     );
 
     let monthlyLimits = monthNumber.limits;
-    return monthlyLimits;
+    console.log(monthlyLimits);
   }
 
   getMonthlyIncome() {
@@ -127,36 +128,20 @@ export class HomeComponent implements OnInit {
     const monthsArray: string[] = [];
     const categoryArray: string[] = [];
 
-    const data: MonthlyData[] = this.service.getOldMonthlyData(6);
+    const data: MonthlyData[] = this.service.getOldMonthlyData(1);
     data.forEach((e: MonthlyData) => {
-      let expensesPerMonth = 0;
-      let limitsPerMonth = 0;
-
-      // limitsArray.unshift(e.income);
-      monthsArray.unshift(e.month);
       e.expenses.forEach((f: Expenses) => {
-        expensesPerMonth = expensesPerMonth + f.amount;
+        expensesArray.push(f.amount);
+        categoryArray.push(f.category);
         // console.log(categoryNames);
       });
 
-      e.expenses.forEach((g: Limits) => {
-        limitsPerMonth = limitsPerMonth + g.amount;
-        console.log(g.amount);
+      e.limits.forEach((g: Limits) => {
+        limitsArray.push(g.amount);
       });
 
-      expensesArray.unshift(expensesPerMonth);
-      limitsArray.unshift(limitsPerMonth);
-    });
-
-    const data2: MonthlyData[] = this.service.getOldMonthlyData(6);
-    const categArray: string[] = [];
-
-    data2.forEach((e: MonthlyData) => {
-      let categoryList = '';
-      e.expenses.forEach((f: Expenses) => {
-        categoryList = f.category;
-      });
-      categoryArray.push();
+      // expensesArray.unshift(expensesPerMonth);
+      // limitsArray.unshift(limitsPerMonth);
     });
 
     this.barCharts = {

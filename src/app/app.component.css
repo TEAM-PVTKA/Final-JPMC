@@ -4,11 +4,16 @@
 
 .mynav{
     padding: 15px 10px;
-    background: #fff;
+    background: #785bf8;
     border: none;
-    border-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     margin-bottom: 40px;
     -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
     box-shadow: 1px 5px 5px rgba(0, 0, 0, .1)
 
 }
+#toggle{
+    background-color: #fff;
+    color:#785bf8;
+}  

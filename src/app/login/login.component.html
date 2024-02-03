@@ -5,9 +5,9 @@
             <div class="row justify-content-md-center h-100">
                 <div class="card-wrapper">
                     <div class="brand">
-                        <img src="assets/images/logo.webp" alt="logo">
+                        <img src="assets/images/logo.png" alt="logo">
                     </div>
-                    <div class="card fat">
+                    <div class="card fat" id="mylogin">
                         <div class="card-body">
                             <h4 class="card-title"></h4>
                             <form method="POST" class="my-login-validation" novalidate="">
@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="form-group m-0">
-                                    <button type="submit" class="btn btn-primary btn-block" (click)="Logincheck()">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         Login
                                     </button>
                                     <button type="submit" class="btn btn-danger btn-block">
@@ -80,19 +80,29 @@
                                                             <h4 class="card-title"></h4>
                                                             <form method="POST" class="my-login-validation"
                                                                 novalidate="">
-                                                                <div class="form-group">
+                                                                <!-- <div class="form-group">
                                                                     <label for="name">Name</label>
                                                                     <input id="name" type="text" class="form-control"
-                                                                        name="name" required autofocus>
+                                                                        name="name" required autofocus [(ngModel)]="name">
                                                                     <div class="invalid-feedback">
                                                                         What's your name?
+                                                                    </div>
+                                                                </div> -->
+
+                                                                <div class="form-group">
+                                                                    <label for="name">User Name(Must be unique)</label>
+                                                                    <input id="name" type="text" class="form-control"
+                                                                        name="name" required autofocus
+                                                                        [(ngModel)]="uname">
+                                                                    <div class="invalid-feedback">
+                                                                        Give an unique name
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="form-group">
                                                                     <label for="email">E-Mail Address</label>
                                                                     <input id="email" type="email" class="form-control"
-                                                                        name="email" required>
+                                                                        name="email" required [(ngModel)]="email">
                                                                     <div class="invalid-feedback">
                                                                         Your email is invalid
                                                                     </div>
@@ -102,7 +112,7 @@
                                                                     <label for="password">Password</label>
                                                                     <input id="password" type="password"
                                                                         class="form-control" name="password" required
-                                                                        data-eye>
+                                                                        data-eye [(ngModel)]="pwd">
                                                                     <div class="invalid-feedback">
                                                                         Password is required
                                                                     </div>
@@ -123,13 +133,13 @@
 
                                                                 <div class="form-group m-0">
                                                                     <button type="submit"
-                                                                        class="btn btn-primary btn-block">
+                                                                        class="btn btn-primary btn-block"
+                                                                        (click)="registerNow()">
                                                                         Register
                                                                     </button>
                                                                 </div>
                                                                 <div class="mt-4 text-center">
-                                                                    Already have an account? <a
-                                                                        (click)="login()">Login</a>
+                                                                    Already have an account? <a href="/login">Login</a>
                                                                 </div>
                                                             </form>
                                                         </div>

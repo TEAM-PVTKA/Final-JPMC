@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'mycards', component: CardListComponent },
-  {path : 'contact', component:ContactComponent},
+  { path: 'contact', component: ContactComponent },
 
   { path: 'alerts', component: AlertsComponent },
   { path: 'cards', component: CardsComponent },

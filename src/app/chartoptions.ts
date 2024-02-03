@@ -5,7 +5,7 @@ export const homePieChart: any = {
     type: 'pie',
   },
   title: {
-    text: 'Montly Expenses',
+    text: 'Current Month Expenses',
   },
   tooltip: {
     valuePrefix: '₹',

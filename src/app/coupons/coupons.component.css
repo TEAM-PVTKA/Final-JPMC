@@ -1,0 +1,11 @@
+.reward-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .blur {
+    filter: blur(4px);
+    opacity: 0.6;
+    pointer-events: none; /* Disable interactions on blurred element */
+  }

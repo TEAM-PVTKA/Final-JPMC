@@ -13,6 +13,7 @@ export class ExpensesComponent {
   constructor(private service: LimitsService) {}
 
   highcharts = Highcharts;
+  splineCharts = null;
   splineCharts1 = null;
   splineCharts2 = null;
   splineCharts3 = null;
@@ -31,6 +32,8 @@ export class ExpensesComponent {
     // Update the displayed chart based on the selected button
     if (chartType === 'threeMonths') {
       this.getThreeMonthSummary();
+    } else if (chartType === 'fourMonths') {
+      this.getFourMonthSummary();
     } else if (chartType === 'sixMonths') {
       this.getHalfYearlySummary();
     } else if (chartType === 'yearly') {
@@ -56,7 +59,66 @@ export class ExpensesComponent {
       });
       expensesArray.unshift(expensesPerMonth);
       savingsArray.unshift(savingsPerMonth);
-      console.log(monthsArray)
+      console.log(monthsArray);
+    });
+
+    this.splineCharts = {
+      ...splineCharts,
+      xAxis: {
+        categories: monthsArray,
+        crosshair: true,
+        accessibility: {
+          description: 'Months',
+        },
+      },
+      series: [
+        {
+          name: 'Income',
+          marker: {
+            symbol: 'square',
+          },
+          data: incomeArray,
+          color: 'Blue',
+        },
+        {
+          name: 'Expenses',
+          marker: {
+            symbol: 'diamond',
+          },
+          data: expensesArray,
+          color: 'Red',
+        },
+        {
+          name: 'Savings',
+          marker: {
+            symbol: 'square',
+          },
+          data: savingsArray,
+          color: 'Green',
+        },
+      ],
+    };
+  }
+
+  getFourMonthSummary() {
+    const incomeArray: number[] = [];
+    const expensesArray: number[] = [];
+    const monthsArray: string[] = [];
+    const savingsArray: number[] = [];
+
+    const data: MonthlyData[] = this.service.getOldMonthlyData(4);
+    data.forEach((e: MonthlyData) => {
+      let expensesPerMonth = 0;
+      let savingsPerMonth = 0;
+      incomeArray.unshift(e.income);
+      monthsArray.unshift(e.month);
+      e.expenses.forEach((f: Expenses) => {
+        expensesPerMonth = expensesPerMonth + f.amount;
+        savingsPerMonth = e.income - expensesPerMonth;
+      });
+      expensesArray.unshift(expensesPerMonth);
+      savingsArray.unshift(savingsPerMonth);
+      console.log(monthsArray);
     });
 
     this.splineCharts1 = {

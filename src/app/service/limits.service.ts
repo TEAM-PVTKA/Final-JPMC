@@ -3,6 +3,8 @@ import { ApplicationRef, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Expenses, MonthlyData, UploadData, YearData } from './data.model';
 import { AppComponent } from '../app.component';
+import { CardDetails } from '../cards/cards.model';
+import { CategoryList } from '../limits/limits.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +16,7 @@ export class LimitsService {
   monthData: MonthlyData | null = null;
   expensesData: Expenses | null = null;
 
-  categArray: Expenses[] = [];
+  categArray: CategoryList[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -49,6 +51,13 @@ export class LimitsService {
     )[0]!;
     return yearData?.months[mm - 1];
   }
+
+  // getMonthlySavings(mm: number, yyyy: number): MonthlyData {
+  //   const yearData: YearData = this.uploadedData?.years.filter(
+  //     (e: YearData) => e.year === yyyy
+  //   )[0]!;
+  //   return yearData?.months[mm - 1];
+  // }
 
   getOldMonthlyData(noOfMonths: number): MonthlyData[] {
     const oldMonthlyData = [];

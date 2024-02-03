@@ -16,6 +16,7 @@ export class CardsComponent {
   cardNumber3: number;
   cardExpiry: number;
   cardHolder: string;
+  
   card: CardDetails;
 
   resetform(myForm:NgForm){
