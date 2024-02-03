@@ -9,13 +9,12 @@ export class DatabaseService {
   constructor(private http: HttpClient) {}
 
   register(user: any): Observable<any> {
-    return this.http.post('http://localhost:4300/login', user, {
+    return this.http.post('http://localhost:4300/users/register', user, {
       responseType: 'text',
     });
-
   }
 
   login(details: any) {
-    // return this.http.post('http://localhost:4300/register',details)
+    return this.http.post('http://localhost:4300/users/register', details);
   }
 }

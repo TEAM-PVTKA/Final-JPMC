@@ -19,48 +19,46 @@ export class LoginComponent {
 
   registerNow() {
     this.user = {
-      userName: this.uname,
-      password: this.pwd,
-      email: this.email,
+      "userName": this.uname,
+      "password": this.pwd,
+      "email": this.email,
     };
     this.dbservice.register(this.user).subscribe((res) => {
       alert(res);
     });
-    this.router.navigateByUrl('/card');
+    this.router.navigateByUrl('/home');
     localStorage.setItem('loginuser', JSON.stringify(this.user));
     console.log('Signup');
   }
 
-  // loginCheck() {
-  //   this.details = {
-  //     userName: this.uname,
-  //     password: this.pwd,
-  //   };
+  loginCheck() {
+    this.details = {
+      "userName": this.uname,
+      "password": this.pwd,
+    };
 
-  //   this.dbservice.login(this.details).subscribe((res) => {
-  //     console.log(res);
-  //     this.userinfo = res;
-
-  //     if (
-  //       this.userinfo.res == 'User not found' ||
-  //       this.userinfo.res == 'Wrong Username or Password'
-  //     ) {
-  //       alert(this.userinfo.res);
-  //     } else {
-  //       if (this.userinfo.userName != 'admin') {
-  //         alert('login success');
-  //         this.vm.navigateByUrl('/home');
-  //         this.user = {
-  //           UserName: this.userinfo.userName,
-  //           Password: this.userinfo.password,
-  //           Email: this.userinfo.email,
-  //           Id: this.userinfo.id,
-  //         };
-  //         localStorage.setItem('Loginuser', JSON.stringify(this.user));
-  //       }
-  //     }
-  //   });
-  //   //
-  //   //
-  // }
+    this.dbservice.login(this.details).subscribe((res) => {
+      console.log(res);
+      this.userinfo = res;
+      if (
+        this.userinfo.res == 'User not found' ||
+        this.userinfo.res == 'Wrong Username or Password'
+      ) {
+        alert(this.userinfo.res);
+      } else {
+        if (this.userinfo.userName == 'admin') {
+          alert('login success');
+          this.router.navigateByUrl('/home');
+          this.user = {
+            "UserName": this.userinfo.userName,
+            "Password": this.userinfo.password,
+            "Email": this.userinfo.email,
+          };
+          localStorage.setItem('Loginuser', JSON.stringify(this.user));
+        }
+      }
+    });
+    //
+    //
+  }
 }

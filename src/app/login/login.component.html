@@ -10,7 +10,7 @@
                     <div class="card fat" id="mylogin">
                         <div class="card-body">
                             <h4 class="card-title"></h4>
-                            <form method="POST" class="my-login-validation" novalidate="">
+                            <form class="my-login-validation" novalidate="">
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input id="email" type="email" class="form-control" name="email" value="" required
@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="form-group m-0">
-                                    <button type="submit" class="btn btn-primary btn-block">
+                                    <button type="submit" class="btn btn-primary btn-block" (click)="loginCheck()">
                                         Login
                                     </button>
                                     <button type="submit" class="btn btn-danger btn-block">
@@ -80,14 +80,6 @@
                                                             <h4 class="card-title"></h4>
                                                             <form method="POST" class="my-login-validation"
                                                                 novalidate="">
-                                                                <!-- <div class="form-group">
-                                                                    <label for="name">Name</label>
-                                                                    <input id="name" type="text" class="form-control"
-                                                                        name="name" required autofocus [(ngModel)]="name">
-                                                                    <div class="invalid-feedback">
-                                                                        What's your name?
-                                                                    </div>
-                                                                </div> -->
 
                                                                 <div class="form-group">
                                                                     <label for="name">User Name(Must be unique)</label>
