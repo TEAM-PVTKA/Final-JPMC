@@ -12,11 +12,11 @@
                             <h4 class="card-title"></h4>
                             <form class="my-login-validation" novalidate="">
                                 <div class="form-group">
-                                    <label for="email">Email</label>
+                                    <label for="email">Username</label>
                                     <input id="email" type="email" class="form-control" name="email" value="" required
                                         autofocus [(ngModel)]="uname">
                                     <div class="invalid-feedback">
-                                        Email is invalid
+                                        Username is invalid
                                     </div>
                                 </div>
 
@@ -85,7 +85,7 @@
                                                                     <label for="name">User Name(Must be unique)</label>
                                                                     <input id="name" type="text" class="form-control"
                                                                         name="name" required autofocus
-                                                                        [(ngModel)]="uname">
+                                                                        [(ngModel)]="signupUsername">
                                                                     <div class="invalid-feedback">
                                                                         Give an unique name
                                                                     </div>
@@ -94,7 +94,7 @@
                                                                 <div class="form-group">
                                                                     <label for="email">E-Mail Address</label>
                                                                     <input id="email" type="email" class="form-control"
-                                                                        name="email" required [(ngModel)]="email">
+                                                                        name="email" required [(ngModel)]="signupEmail">
                                                                     <div class="invalid-feedback">
                                                                         Your email is invalid
                                                                     </div>
@@ -104,7 +104,7 @@
                                                                     <label for="password">Password</label>
                                                                     <input id="password" type="password"
                                                                         class="form-control" name="password" required
-                                                                        data-eye [(ngModel)]="pwd">
+                                                                        data-eye [(ngModel)]="signupPassword">
                                                                     <div class="invalid-feedback">
                                                                         Password is required
                                                                     </div>

@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import { LimitsService } from '../service/limits.service';
 import { splineCharts } from '../chartoptions';
 import { Expenses, MonthlyData } from '../service/data.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-expenses',
@@ -10,7 +11,7 @@ import { Expenses, MonthlyData } from '../service/data.model';
   styleUrl: './expenses.component.css',
 })
 export class ExpensesComponent {
-  constructor(private service: LimitsService) {}
+  constructor(private service: LimitsService, private router: Router) {}
 
   highcharts = Highcharts;
   splineCharts = null;
@@ -21,6 +22,10 @@ export class ExpensesComponent {
 
   ngOnInit(): void {
     this.getThreeMonthSummary();
+
+    if (localStorage.getItem('loginUser') == null) {
+      this.router.navigateByUrl('/login');
+    }
     // this.getHalfYearlySummary();
     // this.getYearlySummary();
   }

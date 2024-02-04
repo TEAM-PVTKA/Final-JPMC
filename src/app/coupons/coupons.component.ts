@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LimitsService } from '../service/limits.service';
 import { Expenses, MonthlyData } from '../service/data.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coupons',
@@ -16,11 +17,15 @@ export class CouponsComponent {
   isEligibleForReward3: boolean = false;
   isEligibleForReward4: boolean = false;
 
-  constructor(private service: LimitsService) {}
+  constructor(private service: LimitsService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCurrentAmount();
     // this.checkEligibilityForReward();
+
+    if (localStorage.getItem('loginUser') == null) {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   loadCurrentAmount() {

@@ -25,7 +25,7 @@
 
 
             <div *ngIf="!isEligibleForReward">
-                <p>You are not eligible for a reward yet. Keep saving more!!</p>
+                <p>You are not eligible for this reward yet. Keep saving more!!</p>
                 <div class="reward-card blur">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
@@ -71,7 +71,7 @@
 
 
             <div *ngIf="!isEligibleForReward2">
-                <p>You are not eligible for a reward yet. Keep saving more!!</p>
+                <p>You are not eligible for this reward yet. Keep saving more!!</p>
                 <div class="reward-card blur">
                     <div class="col">
                         <div class="card h-100">
@@ -112,7 +112,7 @@
             </div>
 
             <div *ngIf="!isEligibleForReward3">
-                <p>You are not eligible for a reward yet. Keep saving more!!</p>
+                <p>You are not eligible for this reward yet. Keep saving more!!</p>
                 <div class="reward-card blur">
                     <div class="col">
                         <div class="card h-100">
@@ -133,11 +133,11 @@
         </div>
 
         <div class="col-md-3">
-            <div *ngIf="isEligibleForReward1">
+            <div *ngIf="isEligibleForReward3">
                 <div class="reward-card">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="https://www.icicibank.com/content/dam/icicibank/india/managed-assets/docs/personal/cards/coral-bms.png"
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT95EnM6A7RdhOhksTEuXtJGjlZsJ8eUu8GLQ&usqp=CAU"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -153,18 +153,17 @@
                 </div>
             </div>
 
-
-
-            <div *ngIf="!isEligibleForReward1">
-                <p>You are not eligible for a reward yet. Keep saving more!!</p>
+            <div *ngIf="!isEligibleForReward3">
+                <p>You are not eligible for this reward yet. Keep saving more!!</p>
                 <div class="reward-card blur">
                     <div class="col">
                         <div class="card h-100">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to
-                                    additional content.</p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This card has even longer content than the first to
+                                    show that equal height action.</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-body-secondary">Last updated 3 mins ago</small>
@@ -174,6 +173,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

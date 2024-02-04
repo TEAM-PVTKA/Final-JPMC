@@ -9,11 +9,6 @@ export class CardDetailsService {
   cardList: CardDetails[] = [];
   cardList$ = new Subject<CardDetails[]>()
   constructor() {}
-  // getCardDetails() {
-  //   return of(this.cardList);
-  // }
-  // addCardDetails(card: CardDetails) {
-  //   this.cardList.push(card);
-  // }
+ 
 
 }

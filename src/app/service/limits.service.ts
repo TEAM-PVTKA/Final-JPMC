@@ -1,7 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { ApplicationRef, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Expenses, MonthlyData, UploadData, YearData } from './data.model';
+import {
+  Expenses,
+  Limits,
+  MonthlyData,
+  UploadData,
+  YearData,
+} from './data.model';
 import { AppComponent } from '../app.component';
 import { CardDetails } from '../cards/cards.model';
 import { CategoryList } from '../limits/limits.model';
@@ -18,6 +24,10 @@ export class LimitsService {
 
   categArray: CategoryList[] = [];
 
+  // alerts: MonthlyData[] = [];
+
+  limitsArray: Limits[] = [];
+
   constructor(private http: HttpClient) {}
 
   //written by team
@@ -27,7 +37,13 @@ export class LimitsService {
     });
   }
 
-  //written by team
+  setLimit() {
+    return this.http.get<Limits>('./assets/data.json', {
+      responseType: 'json',
+    });
+  }
+
+  //Uploaded Data
   setData(appRef?: ApplicationRef) {
     this.getData().subscribe((data: UploadData) => {
       this.uploadedData = data;
@@ -37,28 +53,21 @@ export class LimitsService {
     });
   }
 
-  //written by T
+  //Category Data
   getCategoryData() {
     return this.http.get<Expenses>('./assets/data.json', {
       responseType: 'json',
     });
   }
 
-  //written by team
+  //Monthly Data
   getMonthlyData(mm: number, yyyy: number): MonthlyData {
     const yearData: YearData = this.uploadedData?.years.filter(
       (e: YearData) => e.year === yyyy
     )[0]!;
     return yearData?.months[mm - 1];
   }
-
-  // getMonthlySavings(mm: number, yyyy: number): MonthlyData {
-  //   const yearData: YearData = this.uploadedData?.years.filter(
-  //     (e: YearData) => e.year === yyyy
-  //   )[0]!;
-  //   return yearData?.months[mm - 1];
-  // }
-
+  // No.of Months Data
   getOldMonthlyData(noOfMonths: number): MonthlyData[] {
     const oldMonthlyData = [];
     const today = new Date();
@@ -77,7 +86,7 @@ export class LimitsService {
     return oldMonthlyData;
   }
 
-  //written by team
+  //Yearly Income
   getYearlyIncome(year: number): number {
     let income = 0;
     const yearData: YearData = this.uploadedData?.years.filter(

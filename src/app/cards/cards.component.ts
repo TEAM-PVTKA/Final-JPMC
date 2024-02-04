@@ -3,6 +3,7 @@ import { CardDetailsService } from '../service/carddetails.service';
 import { Router } from '@angular/router';
 import { CardDetails } from './cards.model';
 import { NgForm } from '@angular/forms';
+import { DatabaseService } from '../service/database.service';
 
 @Component({
   selector: 'app-cards',
@@ -10,19 +11,28 @@ import { NgForm } from '@angular/forms';
   styleUrl: './cards.component.css',
 })
 export class CardsComponent {
-  constructor(private service: CardDetailsService) {}
+  constructor(
+    private service: CardDetailsService,
+    private router: Router,
+    private dbService: DatabaseService
+  ) {}
   cardNumber1: number;
   cardNumber2: number;
   cardNumber3: number;
-  cardExpiry: number;
+  cardExpiry: string;
   cardHolder: string;
-  
+
   card: CardDetails;
 
-  resetform(myForm:NgForm){
-    myForm.resetForm();
+  ngOnInit() {
+    if (localStorage.getItem('loginUser') == null) {
+      this.router.navigateByUrl('/login');
+    }
   }
 
+  resetform(myForm: NgForm) {
+    myForm.resetForm();
+  }
 
   addCard() {
     // console.log(this.cardNumber1)
@@ -58,7 +68,21 @@ export class CardsComponent {
     };
     this.service.cardList.push(this.card);
     this.service.cardList$.next(this.service.cardList);
-    console.log(this.card);
+
+    this.dbService
+      .cards({
+        cardNumber1: this.cardNumber1,
+        cardNumber2: this.cardNumber2,
+        cardNumber3: this.cardNumber3,
+        cardExpiry: this.cardExpiry,
+        cardHolder: this.cardHolder,
+        cardNumberId: cardNumberId,
+      })
+      .subscribe((result) => {
+        console.log(result);
+      });
+
+    alert('Card Added Successfully');
   }
 
   onValueChange(name: string, value: string) {

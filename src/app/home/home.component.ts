@@ -8,6 +8,7 @@ import {
   MonthlyData,
   UploadData,
 } from '../service/data.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ import {
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  constructor(private service: LimitsService) {}
+  constructor(private service: LimitsService, private router:Router) {}
   highcharts = Highcharts;
   homePieChart = null;
 
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
     this.getMonthlyLimitstsVsExp();
     this.getHalfYearlySummary();
     this.getMonthlyLimits();
+
+    if (localStorage.getItem('loginUser') == null) {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   getMonthlyLimits() {

@@ -3,6 +3,7 @@ import { LimitsService } from '../service/limits.service';
 import { Expenses, MonthlyData } from '../service/data.model';
 import { CategoryList } from './limits.model';
 import { CardDetails } from '../cards/cards.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-limits',
@@ -28,13 +29,16 @@ export class LimitsComponent {
   categories: { name: string; limit: number; totalValue: number }[] = [];
 
   mylimit: any | number;
-  // mylimits: any | number;
 
   flag: boolean = false;
 
-  constructor(private limitser: LimitsService) {}
+  constructor(private limitser: LimitsService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('loginUser') == null) {
+      this.router.navigateByUrl('/login');
+    }
+  }
 
   handleSetLimit() {
     if (this.selectedCategory.trim() === '') {
@@ -46,7 +50,10 @@ export class LimitsComponent {
       if (categoryIndex === -1) {
         this.categoryNames.push(this.selectedCategory);
         this.spendingLimits.push(this.minimumLimit);
-      } else {
+      }
+
+      // this.limitser.limitsArray.push(this.categoryNames,this.spendingLimits)
+      else {
         alert('Category already exists. Update the limit if needed.');
       }
 

@@ -8,57 +8,87 @@ import { DatabaseService } from '../service/database.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private router: Router, private dbservice: DatabaseService) {}
-  // name: any;
+  signupUsername: any;
+  signupPassword: any;
+  signupEmail: any;
+  constructor(private router: Router, private dbService: DatabaseService) {}
+
   uname: any;
   pwd: any;
   email: any;
   user: any;
-  details: any;
-  userinfo: any;
-
-  registerNow() {
-    this.user = {
-      "userName": this.uname,
-      "password": this.pwd,
-      "email": this.email,
-    };
-    this.dbservice.register(this.user).subscribe((res) => {
-      alert(res);
-    });
-    this.router.navigateByUrl('/home');
-    localStorage.setItem('loginuser', JSON.stringify(this.user));
-    console.log('Signup');
-  }
+  // details: any;
+  // userinfo: any;
 
   loginCheck() {
-    this.details = {
-      "userName": this.uname,
-      "password": this.pwd,
-    };
+    this.dbService
+      .login({ userName: this.uname, password: this.pwd })
+      .subscribe(
+        (result) => {
+          // Handle successful login
+          localStorage.setItem('loginUser', JSON.stringify(this.uname));
+          console.log(result);
+          this.router.navigateByUrl('/cards');
 
-    this.dbservice.login(this.details).subscribe((res) => {
-      console.log(res);
-      this.userinfo = res;
-      if (
-        this.userinfo.res == 'User not found' ||
-        this.userinfo.res == 'Wrong Username or Password'
-      ) {
-        alert(this.userinfo.res);
-      } else {
-        if (this.userinfo.userName == 'admin') {
-          alert('login success');
-          this.router.navigateByUrl('/home');
-          this.user = {
-            "UserName": this.userinfo.userName,
-            "Password": this.userinfo.password,
-            "Email": this.userinfo.email,
-          };
-          localStorage.setItem('Loginuser', JSON.stringify(this.user));
+          // if (result.role === 'admin') {
+          //   // Redirect to admin dashboard
+          //   this.router.navigateByUrl('/admin-nav/admin-dashboard');
+          // } else {
+          //   // Redirect to user dashboard
+          //   this.router.navigateByUrl('/usernav/user-dashboard');
+          // }
+        },
+        (error) => {
+          // Handle login error
+          console.error(error);
+          alert('Invalid username or Password');
+          // Swal.fire({
+          //   title: 'Invalid username or password. Please enter valid login credentials.',
+          //   icon: 'warning'
+          // });
         }
-      }
-    });
-    //
-    //
+      );
+  }
+
+  registerNow() {
+    // if (this.signupPassword !== this.confirmPassword) {
+    //   Swal.fire({
+    //     title: 'Password and Confirm Password do not match.',
+    //     icon: 'error'
+    //   });
+    //   return;
+    // }
+
+    this.dbService
+      .register({
+        userName: this.signupUsername,
+        password: this.signupPassword,
+        email: this.signupEmail,
+      })
+      .subscribe(
+        (result) => {
+          // Handle successful registration
+          console.log(result);
+          // Swal.fire({
+          //   title: 'User registered successfully',
+          //   icon: 'success'
+          // });
+          localStorage.setItem(
+            'loginUser',
+            JSON.stringify(this.signupUsername)
+          );
+          alert('User registered successfully');
+          this.router.navigateByUrl('/cards');
+        },
+        (error) => {
+          // Handle registration error
+          console.error(error);
+          // Swal.fire({
+          //   title: 'Error during registration. Please try again.',
+          //   icon: 'error'
+          // });
+          alert('Error during registration');
+        }
+      );
   }
 }

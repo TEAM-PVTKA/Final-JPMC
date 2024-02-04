@@ -14,7 +14,7 @@ export class CardListComponent {
   cardNumber1: number;
   cardNumber2: number;
   cardNumber3: number;
-  cardExpiry: number;
+  cardExpiry: string;
   cardHolder: string;
   card: CardDetails;
   constructor(private service: CardDetailsService, private path: Router) {}
@@ -28,9 +28,5 @@ export class CardListComponent {
 
   onDelete(index: number) {
     this.cardsArray.splice(index, 1);
-  }
-
-  gotocards() {
-    this.path.navigateByUrl('/cards');
   }
 }
