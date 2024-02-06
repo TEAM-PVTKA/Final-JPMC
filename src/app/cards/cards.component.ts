@@ -96,7 +96,7 @@ export class CardsComponent {
     //   });
 
     alert('Card Added Successfully');
-    this.router.navigateByUrl('/nav/limits');
+    // this.router.navigateByUrl('/nav/limits');
   }
 
   onValueChange(name: string, value: string) {

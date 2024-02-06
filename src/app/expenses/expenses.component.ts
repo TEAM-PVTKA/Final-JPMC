@@ -52,7 +52,7 @@ export class ExpensesComponent {
     const monthsArray: string[] = [];
     const savingsArray: number[] = [];
 
-    const data: MonthlyData[] = this.service.getOldMonthlyData(3);
+    const data: MonthlyData[] = this.service.getOldMonthlyData(4);
     data.forEach((e: MonthlyData) => {
       let expensesPerMonth = 0;
       let savingsPerMonth = 0;

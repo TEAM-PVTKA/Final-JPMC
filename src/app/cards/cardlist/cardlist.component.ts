@@ -27,11 +27,11 @@ export class CardListComponent {
     const loggedInUser = localStorage.getItem('loginUser');
 
     console.log(loggedInUser);
-    // this.service.cardList$.subscribe((cards: CardDetails[]) => {
-    //   if (cards.length) {
-    //     this.cardsArray = this.service.cardList;
-    //   }
-    // });
+    this.service.cardList$.subscribe((cards: CardDetails[]) => {
+      if (cards.length) {
+        this.cardsArray = this.service.cardList;
+      }
+    });
 
     if (loggedInUser) {
       this.dbService.getCardsForUser(loggedInUser).subscribe(

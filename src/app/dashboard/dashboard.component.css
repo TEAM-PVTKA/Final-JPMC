@@ -1,6 +1,15 @@
 .offcanvas{
     width:20% !important;
 }  
+:ng-host ::ng-deep {
+    .navbar{
+        padding: 0 !important;
+    }
+    .nav-link{
+        padding: 0 !important;
+        padding: 0 !important;
+    }
+}
 
 .mynav{
     padding: 15px 10px;

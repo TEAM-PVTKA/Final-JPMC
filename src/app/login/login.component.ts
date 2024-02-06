@@ -78,8 +78,8 @@ export class LoginComponent {
             'loginUser',
             JSON.stringify(this.signupUsername)
           );
-          alert('User registered successfully');
-          this.router.navigateByUrl('/nav/cards');
+          alert('User registered successfully, Now please login');
+          this.router.navigateByUrl('/');
         },
         (error) => {
           // Handle registration error

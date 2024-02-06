@@ -45,7 +45,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DataComponent,
     ExpensesComponent,
     ContactComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     RouterModule,
@@ -55,6 +55,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CommonModule,
+    ReactiveFormsModule,
 
     HighchartsChartModule,
   ],
