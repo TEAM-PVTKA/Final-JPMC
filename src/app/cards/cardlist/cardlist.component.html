@@ -1,13 +1,15 @@
 <div class="row">
+    <!-- Add Card Section (Optional) -->
     <!-- <div *ngIf="flag" class="col-md-8 d-flex justify-content-center">
         Please Add Your Cards Here!!
         <button class="btn btn-info" (click)="gotocards()">
             Add Card
         </button>
     </div> -->
-    <div class="col-md-8 d-flex justify-content-center">
-        <div class="container mt-5 body" *ngFor="let card of cardsArray; let i = index ">
 
+    <!-- Display Cards -->
+    <div class="col-md-8 d-flex justify-content-center">
+        <div class="container mt-5 body" *ngFor="let card of cardsArray; let i = index">
             <div class="row">
                 <div class="col-md-6 mt-3 visa">
                     <i>VISA</i>
@@ -23,9 +25,7 @@
                 <div class="col-md-12">CARD NUMBER</div>
             </div>
             <div class="c-details">
-
                 <div class="row mt-2">
-
                     <div class="col-md-3">
                         {{card.cardNumber1}}
                     </div>
@@ -42,8 +42,8 @@
                         {{card.cardNumber3}}
                     </div>
                 </div>
-
             </div>
+
             <div class="row ">
                 <div class="col-md-6 date">
                     EXPIRY
@@ -54,6 +54,7 @@
                     {{card.cardExpiry}}
                 </div>
             </div>
+
             <div class="row ">
                 <div class="col">
                     <div class="form-group cholder">
@@ -64,12 +65,10 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group name">
-                        {{card.cardHolder|uppercase}}
+                        {{card.cardHolder | uppercase}}
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>

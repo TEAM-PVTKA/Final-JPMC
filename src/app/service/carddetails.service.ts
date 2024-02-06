@@ -9,6 +9,9 @@ export class CardDetailsService {
   cardList: CardDetails[] = [];
   cardList$ = new Subject<CardDetails[]>()
   constructor() {}
+
+
+  
  
 
 }

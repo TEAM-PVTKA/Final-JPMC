@@ -11,6 +11,7 @@ export class LoginComponent {
   signupUsername: any;
   signupPassword: any;
   signupEmail: any;
+
   constructor(private router: Router, private dbService: DatabaseService) {}
 
   uname: any;
@@ -28,7 +29,7 @@ export class LoginComponent {
           // Handle successful login
           localStorage.setItem('loginUser', JSON.stringify(this.uname));
           console.log(result);
-          this.router.navigateByUrl('/cards');
+          this.router.navigateByUrl('/nav/cards');
 
           // if (result.role === 'admin') {
           //   // Redirect to admin dashboard
@@ -78,7 +79,7 @@ export class LoginComponent {
             JSON.stringify(this.signupUsername)
           );
           alert('User registered successfully');
-          this.router.navigateByUrl('/cards');
+          this.router.navigateByUrl('/nav/cards');
         },
         (error) => {
           // Handle registration error

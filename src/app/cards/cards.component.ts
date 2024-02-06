@@ -58,17 +58,6 @@ export class CardsComponent {
       return;
     }
 
-    this.card = {
-      cardNumber1: this.cardNumber1,
-      cardNumber2: this.cardNumber2,
-      cardNumber3: this.cardNumber3,
-      cardExpiry: this.cardExpiry,
-      cardHolder: this.cardHolder,
-      cardNumberId: cardNumberId,
-    };
-    this.service.cardList.push(this.card);
-    this.service.cardList$.next(this.service.cardList);
-
     this.dbService
       .cards({
         cardNumber1: this.cardNumber1,
@@ -82,7 +71,32 @@ export class CardsComponent {
         console.log(result);
       });
 
+    this.card = {
+      cardNumber1: this.cardNumber1,
+      cardNumber2: this.cardNumber2,
+      cardNumber3: this.cardNumber3,
+      cardExpiry: this.cardExpiry,
+      cardHolder: this.cardHolder,
+      cardNumberId: cardNumberId,
+    };
+    this.service.cardList.push(this.card);
+    this.service.cardList$.next(this.service.cardList);
+
+    // this.dbService
+    //   .cards({
+    //     cardNumber1: this.cardNumber1,
+    //     cardNumber2: this.cardNumber2,
+    //     cardNumber3: this.cardNumber3,
+    //     cardExpiry: this.cardExpiry,
+    //     cardHolder: this.cardHolder,
+    //     cardNumberId: cardNumberId,
+    //   })
+    //   .subscribe((result) => {
+    //     console.log(result);
+    //   });
+
     alert('Card Added Successfully');
+    this.router.navigateByUrl('/nav/limits');
   }
 
   onValueChange(name: string, value: string) {

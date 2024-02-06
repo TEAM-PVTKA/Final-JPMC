@@ -8,6 +8,9 @@ import * as XLSX from 'xlsx';
   styleUrl: './data.component.css',
 })
 export class DataComponent {
+
+  constructor(private http: HttpClient){}
+
   fileSelected = false;
   file: File | null = null;
   fileError = '';
@@ -32,6 +35,8 @@ export class DataComponent {
   }
 
   upload(): void {
+
+
     if (this.file) {
       const fileReader = new FileReader();
       fileReader.onload = (e: any) => {
