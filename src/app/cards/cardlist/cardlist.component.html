@@ -12,7 +12,7 @@
         <div class="container mt-5 body" *ngFor="let card of cardsArray; let i = index">
             <div class="row">
                 <div class="col-md-6 mt-3 visa">
-                    <i>VISA</i>
+                    <i>MY CARD</i>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end mt-3">
                     <button class="btn btn-danger" (click)="onDelete(i)">
@@ -29,14 +29,11 @@
                     <div class="col-md-3">
                         {{card.cardNumber1}}
                     </div>
-                    <div class="col-md-1">
-                        <p>-</p>
-                    </div>
                     <div class="col-md-3">
                         {{card.cardNumber2}}
                     </div>
-                    <div class="col-md-1">
-                        <p>-</p>
+                    <div class="col-md-3">
+                        {{card.cardNumber3}}
                     </div>
                     <div class="col-md-3">
                         {{card.cardNumber3}}
@@ -44,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="row ">
+            <div class="row mt-3">
                 <div class="col-md-6 date">
                     EXPIRY
                 </div>
@@ -55,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="row ">
+            <div class="row mt-1">
                 <div class="col">
                     <div class="form-group cholder">
                         Card Holder
@@ -70,5 +67,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>
 </div>

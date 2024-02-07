@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../service/database.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,49 +19,71 @@ export class LoginComponent {
   pwd: any;
   email: any;
   user: any;
-  // details: any;
-  // userinfo: any;
+  
+  togglePage(): void {
+    const overlaySignIn = document.querySelector(
+      '.overlay-signin'
+    ) as HTMLElement;
+    const overlaySignUp = document.querySelector(
+      '.overlay-signup'
+    ) as HTMLElement;
+    const signUp = document.querySelector('.signup') as HTMLElement;
+    const signIn = document.querySelector('.signin') as HTMLElement;
+
+    overlaySignIn.classList.toggle('show');
+    overlaySignUp.classList.toggle('hide');
+    signUp.classList.toggle('show');
+    signIn.classList.toggle('hide');
+  }
 
   loginCheck() {
-    this.dbService
-      .login({ userName: this.uname, password: this.pwd })
-      .subscribe(
-        (result) => {
-          // Handle successful login
-          localStorage.setItem('loginUser', JSON.stringify(this.uname));
-          console.log(result);
-          this.router.navigateByUrl('/nav/cards');
-
-          // if (result.role === 'admin') {
-          //   // Redirect to admin dashboard
-          //   this.router.navigateByUrl('/admin-nav/admin-dashboard');
-          // } else {
-          //   // Redirect to user dashboard
-          //   this.router.navigateByUrl('/usernav/user-dashboard');
-          // }
-        },
-        (error) => {
-          // Handle login error
-          console.error(error);
-          alert('Invalid username or Password');
-          // Swal.fire({
-          //   title: 'Invalid username or password. Please enter valid login credentials.',
-          //   icon: 'warning'
-          // });
-        }
-      );
+    if (this.uname == null && this.pwd == null) {
+      Swal.fire({
+        title: 'Login Failed',
+        text : ' "Oops! It seems there was an issue with your login credentials." ',
+        icon: 'error'
+      });
+    } else {
+      this.dbService
+        .login({ userName: this.uname, password: this.pwd })
+        .subscribe(
+          (result) => {
+            // Handle successful login
+            localStorage.setItem('loginUser', JSON.stringify(this.uname));
+            console.log(result);
+            this.router.navigateByUrl('/nav/cards');
+            //alert for login success
+            Swal.fire({
+              title:'Login Successful',
+              text: 'Welcome back! You have successfully logged in. Enjoy your experience!',
+              icon:'success'
+            })
+          },
+          (error) => {
+            // Handle login error
+            console.error(error);
+            // alert('Invalid username or Password');
+            Swal.fire({
+              title: 'Login',
+              text : 'Invalid username or password. Please enter valid login credentials.',
+              icon: 'warning'
+            });
+          }
+        );
+    }
   }
 
   registerNow() {
-    // if (this.signupPassword !== this.confirmPassword) {
-    //   Swal.fire({
-    //     title: 'Password and Confirm Password do not match.',
-    //     icon: 'error'
-    //   });
-    //   return;
-    // }
-
-    this.dbService
+    if (this.signupPassword == null && this.signupUsername == null && this.signupEmail == null) {
+      Swal.fire({
+        title: 'Sign Up Failed',
+        icon: 'error',
+        text: ' "Uh-oh! Something went wrong during the sign-up process."'
+      });
+      return;
+    }
+    else{
+      this.dbService
       .register({
         userName: this.signupUsername,
         password: this.signupPassword,
@@ -70,16 +93,16 @@ export class LoginComponent {
         (result) => {
           // Handle successful registration
           console.log(result);
-          // Swal.fire({
-          //   title: 'User registered successfully',
-          //   icon: 'success'
-          // });
           localStorage.setItem(
             'loginUser',
             JSON.stringify(this.signupUsername)
           );
-          alert('User registered successfully, Now please login');
-          this.router.navigateByUrl('/');
+          Swal.fire({
+            title: 'User registered successfully',
+            icon: 'success'
+          });
+          // alert('User registered successfully, Now please login');
+          this.router.navigateByUrl('/login');
         },
         (error) => {
           // Handle registration error
@@ -91,5 +114,7 @@ export class LoginComponent {
           alert('Error during registration');
         }
       );
+    }
+    
   }
 }

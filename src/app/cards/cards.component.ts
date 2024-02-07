@@ -19,6 +19,7 @@ export class CardsComponent {
   cardNumber1: number;
   cardNumber2: number;
   cardNumber3: number;
+  cardNumber4: number;
   cardExpiry: string;
   cardHolder: string;
 
@@ -39,16 +40,18 @@ export class CardsComponent {
     if (
       this.cardNumber1?.toString().length !== 4 ||
       this.cardNumber2?.toString().length !== 4 ||
-      this.cardNumber3?.toString().length !== 4
+      this.cardNumber3?.toString().length !== 4 ||
+      this.cardNumber4?.toString().length !== 4
     ) {
-      alert(`Card is Invalid`);
+      alert('Card is Invalid');
       return;
     }
 
     const cardNumberId =
       this.cardNumber1.toString() +
       this.cardNumber2.toString() +
-      this.cardNumber3.toString();
+      this.cardNumber3.toString() +
+      this.cardNumber4.toString();
     if (
       this.service.cardList.findIndex((e: CardDetails) => {
         return e.cardNumberId === cardNumberId;
@@ -63,6 +66,7 @@ export class CardsComponent {
         cardNumber1: this.cardNumber1,
         cardNumber2: this.cardNumber2,
         cardNumber3: this.cardNumber3,
+        cardNumber4: this.cardNumber4,
         cardExpiry: this.cardExpiry,
         cardHolder: this.cardHolder,
         cardNumberId: cardNumberId,
@@ -75,6 +79,7 @@ export class CardsComponent {
       cardNumber1: this.cardNumber1,
       cardNumber2: this.cardNumber2,
       cardNumber3: this.cardNumber3,
+      cardNumber4: this.cardNumber4,
       cardExpiry: this.cardExpiry,
       cardHolder: this.cardHolder,
       cardNumberId: cardNumberId,
@@ -100,6 +105,6 @@ export class CardsComponent {
   }
 
   onValueChange(name: string, value: string) {
-    // this[name]=value.replace(/[a-zA-Z]/g, '');
-  }
+    // this[name]=value.replace(/[a-zA-Z]/g, '');
+  }
 }

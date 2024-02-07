@@ -42,6 +42,6 @@ export class CardListComponent {
   }
 
   onDelete(index: number) {
-    this.cardsArray.splice(index, 1);
-  }
+    this.cardsArray.splice(index, 1);
+  }
 }
