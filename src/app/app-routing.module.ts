@@ -26,6 +26,7 @@ const routes: Routes = [
       { path: 'limits', component: LimitsComponent },
       { path: 'expenses', component: ExpensesComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'alerts', component: AlertsComponent },
     ],
   },
   // { path: '', pathMatch: 'full', redirectTo: 'login' },
