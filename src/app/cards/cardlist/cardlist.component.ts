@@ -18,11 +18,19 @@ export class CardListComponent {
   cardExpiry: string;
   cardHolder: string;
   card: CardDetails;
+
+  flag: boolean = true;
+
   constructor(
     private service: CardDetailsService,
-    private path: Router,
+    private router: Router,
     private dbService: DatabaseService
   ) {}
+
+  onLimit(){
+    this.router.navigateByUrl('/nav/limits')
+  }
+
   ngOnInit() {
     const loggedInUser = localStorage.getItem('loginUser');
 
@@ -30,6 +38,10 @@ export class CardListComponent {
     this.service.cardList$.subscribe((cards: CardDetails[]) => {
       if (cards.length) {
         this.cardsArray = this.service.cardList;
+      }
+
+      if (this.cardsArray.length > 0) {
+        this.flag = false;
       }
     });
 
@@ -42,6 +54,6 @@ export class CardListComponent {
   }
 
   onDelete(index: number) {
-    this.cardsArray.splice(index, 1);
-  }
+    this.cardsArray.splice(index, 1);
+  }
 }

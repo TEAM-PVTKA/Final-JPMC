@@ -18,6 +18,10 @@ export class LimitsComponent {
     'My Bills',
     'Transportation',
     'Shopping',
+    'Health',
+    'Accessories',
+    'Food',
+    'Others',
   ]; // Simulated card options
   selectedCategory: string = '';
   minimumLimit: number = 0;

@@ -22,7 +22,7 @@ export const homePieChart: any = {
         {
           enabled: true,
           distance: -40,
-          format: '{point.percentage:.1f}',
+          format: '{point.percentage:.1f}%',
           style: {
             fontSize: '1.2em',
             textOutline: 'none',
@@ -45,7 +45,7 @@ export const barCharts: any = {
     type: 'column',
   },
   title: {
-    text: 'Limit vs Expenses',
+    text: 'Monthly Limits vs Expenses',
     align: 'center',
   },
 

@@ -16,9 +16,12 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  constructor(private service: LimitsService, private router:Router) {}
+  constructor(private service: LimitsService, private router: Router) {}
   highcharts = Highcharts;
   homePieChart = null;
+
+  username: any;
+  user: any;
 
   barCharts = null;
 
@@ -30,6 +33,10 @@ export class HomeComponent implements OnInit {
 
     if (localStorage.getItem('loginUser') == null) {
       this.router.navigateByUrl('/login');
+    } else {
+      this.user = localStorage.getItem('loginUser');
+      this.user = JSON.parse(this.user);
+      this.username = this.user.userName;
     }
   }
 
@@ -119,7 +126,7 @@ export class HomeComponent implements OnInit {
       ...homePieChart,
       series: [
         {
-          name: 'number',
+          name: '',
           colorByPoint: true,
           data: data,
         },
@@ -160,12 +167,12 @@ export class HomeComponent implements OnInit {
       },
       series: [
         {
-          name: 'Limits',
+          name: 'Limit',
           color: 'green',
           data: limitsArray,
         },
         {
-          name: 'Expenses',
+          name: 'Expense',
           color: 'red',
           data: expensesArray,
         },
